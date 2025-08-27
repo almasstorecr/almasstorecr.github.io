@@ -1,0 +1,1612 @@
+/* Variables Raíz - Tema Rosa Moderno */
+:root {
+    --primary-pink: #e91e63;
+    --secondary-pink: #c2185b;
+    --light-pink: #f8bbd0;
+    --lighter-pink: #fce4ec;
+    --dark-pink: #880e4f;
+    --deep-pink: #ad1457;
+    --soft-pink: #f9f0f5;
+    --gradient-pink: linear-gradient(135deg, #e91e63, #c2185b);
+    --gradient-pink-light: linear-gradient(135deg, #f8bbd0, #fce4ec);
+    --gradient-pink-dark: linear-gradient(135deg, #c2185b, #880e4f);
+    --gradient-glass: linear-gradient(135deg, rgba(233, 30, 99, 0.1), rgba(194, 24, 91, 0.05));
+    --text-dark: #2c2c2c;
+    --text-light: #666;
+    --white: #ffffff;
+    --shadow-pink: rgba(233, 30, 99, 0.15);
+    --shadow-pink-hover: rgba(233, 30, 99, 0.25);
+    --shadow-glass: 0 8px 32px rgba(233, 30, 99, 0.1);
+    --border-radius: 20px;
+    --border-radius-lg: 25px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --backdrop-blur: blur(10px);
+}
+
+/* Estilos Globales - Configuración base para toda la página */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+    background-color: var(--soft-pink);
+}
+
+/* Navegación - Barra de navegación principal */
+.navbar {
+    background: var(--gradient-pink) !important;
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(255, 105, 180, 0.3);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--white) !important;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid var(--white);
+}
+
+.navbar-nav .nav-link {
+    color: var(--white) !important;
+    font-weight: 500;
+    margin: 0 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--lighter-pink) !important;
+    transform: translateY(-2px);
+}
+
+/* Sección Hero - Banner principal con imagen y título */
+.hero-section {
+    background: linear-gradient(135deg, var(--lighter-pink), var(--soft-pink));
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 80px;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: var(--gradient-pink);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+}
+
+.hero-image {
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(255, 105, 180, 0.3);
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Botones - Estilos para todos los botones de la página */
+.btn-primary {
+    background: var(--gradient-pink);
+    border: none;
+    padding: 12px 30px;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 105, 180, 0.6);
+}
+
+.btn-outline-primary {
+    color: var(--primary-pink);
+    border: 2px solid var(--primary-pink);
+    padding: 12px 30px;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    background: var(--gradient-pink);
+    border-color: var(--primary-pink);
+    transform: translateY(-2px);
+}
+
+.btn-catalogo {
+    background: var(--gradient-pink);
+    color: var(--white);
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
+}
+
+.btn-catalogo:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 105, 180, 0.6);
+    color: var(--white);
+}
+
+/* Estilos de Sección - Títulos y textos para secciones */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-pink);
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: var(--gradient-pink);
+    border-radius: 2px;
+}
+
+.section-text {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Sección Acerca de - Información sobre la tienda/empresa */
+.about-section {
+    background: var(--white);
+    position: relative;
+}
+
+.about-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: var(--soft-pink);
+    transform: skewY(-3deg);
+    transform-origin: top left;
+}
+
+.feature-list {
+    margin-top: 2rem;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.feature-item i {
+    color: var(--primary-pink);
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+}
+
+/* Sección de Productos - Tarjetas y grid de productos */
+.products-section {
+    background: var(--soft-pink);
+}
+
+.product-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.2);
+    transition: all 0.3s ease;
+    height: 300px;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(255, 105, 180, 0.4);
+}
+
+.product-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.1);
+}
+
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(255, 105, 180, 0.9), transparent);
+    color: var(--white);
+    padding: 2rem;
+    transform: translateY(70%);
+    transition: all 0.3s ease;
+}
+
+.product-card:hover .card-overlay {
+    transform: translateY(0);
+}
+
+.card-overlay h4 {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.card-overlay p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+/* Sección de Pago - Información sobre métodos de pago */
+.payment-section {
+    background: var(--white);
+}
+
+/* Sección de Catálogo - Vista general de productos */
+.catalog-section {
+    background: var(--white);
+}
+
+/* Sección de Contacto - Información de contacto y formularios */
+.contact-section {
+    background: var(--primary-pink);
+}
+
+.contact-info {
+    margin-top: 2rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.contact-item i {
+    color: var(--primary-pink);
+    margin-right: 1rem;
+    font-size: 1.5rem;
+}
+
+.contact-item a {
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: var(--primary-pink);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: var(--gradient-pink);
+    color: var(--white);
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
+}
+
+.map-container {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.2);
+}
+
+.location-section {
+    background: var(--white);
+}
+
+.location-link {
+    color: var(--primary-pink);
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.location-link:hover {
+    color: var(--secondary-pink);
+}
+
+/* Sección de Información - Tarjetas informativas modernas */
+.info-section {
+    background: linear-gradient(135deg, var(--soft-pink) 0%, var(--white) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.info-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%23ff69b4" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    pointer-events: none;
+}
+
+.section-header {
+    position: relative;
+    z-index: 1;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 3rem;
+}
+
+/* Tarjetas de Información Modernas - Efectos hover y animaciones */
+.info-card-modern {
+    position: relative;
+    height: 100%;
+    perspective: 1000px;
+}
+
+.info-card-inner {
+    position: relative;
+    background: var(--white);
+    border-radius: 25px;
+    padding: 3rem 2.5rem;
+    box-shadow: 0 15px 35px rgba(255, 105, 180, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    height: 100%;
+    overflow: hidden;
+}
+
+.info-card-inner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient-pink);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 25px;
+}
+
+.info-card-modern:hover .info-card-inner {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(255, 105, 180, 0.2);
+}
+
+.info-card-modern:hover .info-card-inner::before {
+    opacity: 0.05;
+}
+
+.info-icon-wrapper {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.info-icon-circle {
+    width: 90px;
+    height: 90px;
+    background: var(--gradient-pink);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    color: var(--white);
+    font-size: 2.5rem;
+    position: relative;
+    z-index: 2;
+    transition: all 0.4s ease;
+}
+
+.info-card-modern:hover .info-icon-circle {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 10px 25px rgba(255, 105, 180, 0.3);
+}
+
+.icon-bg-pattern {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, var(--light-pink) 0%, transparent 70%);
+    border-radius: 50%;
+    opacity: 0.3;
+    transition: all 0.4s ease;
+}
+
+.info-card-modern:hover .icon-bg-pattern {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0.5;
+}
+
+.info-content {
+    position: relative;
+    z-index: 2;
+}
+
+.info-title {
+    color: var(--primary-pink);
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+
+.info-card-modern:hover .info-title {
+    color: var(--secondary-pink);
+}
+
+.info-description {
+    color: var(--text-dark);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.info-features {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.info-badge {
+    background: var(--lighter-pink);
+    color: var(--primary-pink);
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.info-card-modern:hover .info-badge {
+    background: var(--primary-pink);
+    color: var(--white);
+}
+
+.info-hover-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, transparent 0%, rgba(255, 105, 180, 0.05) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 25px;
+}
+
+.info-card-modern:hover .info-hover-effect {
+    opacity: 1;
+}
+
+/* Tarjeta de Información Adicional - Información extra */
+.additional-info-card {
+    background: var(--white);
+    border-radius: 25px;
+    padding: 2.5rem;
+    box-shadow: 0 15px 35px rgba(255, 105, 180, 0.1);
+    margin-top: 2rem;
+    border: 1px solid var(--lighter-pink);
+    transition: all 0.3s ease;
+}
+
+.additional-info-card:hover {
+    box-shadow: 0 20px 40px rgba(255, 105, 180, 0.15);
+    transform: translateY(-2px);
+}
+
+.additional-title {
+    color: var(--primary-pink);
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.additional-text {
+    color: var(--text-light);
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+/* Diseño Responsivo para Tarjetas de Información - Adaptación a móviles */
+@media (max-width: 768px) {
+    .info-card-inner {
+        padding: 2rem 1.5rem;
+    }
+    
+    .info-icon-circle {
+        width: 70px;
+        height: 70px;
+        font-size: 2rem;
+    }
+    
+    .info-title {
+        font-size: 1.3rem;
+    }
+    
+    .additional-info-card {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .info-card-inner {
+        padding: 1.5rem;
+    }
+    
+    .info-features {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .additional-info-card {
+        text-align: center;
+    }
+}
+
+/* Sección de Contacto Moderna - Diseño actualizado con tarjetas */
+.contact-section {
+    background: linear-gradient(135deg, var(--white) 0%, var(--soft-pink) 100%);
+    position: relative;
+}
+
+.contact-card-modern {
+    background: var(--white);
+    border-radius: 25px;
+    padding: 3rem;
+    box-shadow: 0 15px 35px rgba(255, 105, 180, 0.1);
+    border: 1px solid var(--lighter-pink);
+}
+
+.contact-item-modern {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem;
+    background: var(--soft-pink);
+    border-radius: 15px;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.contact-item-modern:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.2);
+}
+
+.contact-icon-modern {
+    width: 60px;
+    height: 60px;
+    background: var(--gradient-pink);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    color: var(--white);
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.contact-content-modern h5 {
+    color: var(--primary-pink);
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.contact-content-modern a,
+.contact-content-modern span {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.contact-content-modern a:hover {
+    color: var(--primary-pink);
+}
+
+.social-section-modern {
+    padding: 2rem;
+    background: var(--soft-pink);
+    border-radius: 15px;
+}
+
+.social-links-modern {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.social-link-modern {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background: var(--white);
+    border-radius: 15px;
+    text-decoration: none;
+    color: var(--text-dark);
+    transition: all 0.3s ease;
+    min-width: 100px;
+}
+
+.social-link-modern:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.2);
+    color: var(--primary-pink);
+}
+
+.social-link-modern i {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-pink);
+}
+
+.map-container-modern {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.1);
+}
+
+@media (max-width: 768px) {
+    .contact-card-modern {
+        padding: 2rem;
+    }
+    
+    .contact-item-modern {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .contact-icon-modern {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+    
+    .social-links-modern {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Pie de Página Profesional - Footer con información completa */
+.footer-professional {
+    background: linear-gradient(135deg, #ff69b4 0%, #ff1493 50%, #c71585 100%);
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-professional::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="pinkPattern" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23pinkPattern)"/></svg>');
+    pointer-events: none;
+}
+
+.footer-main {
+    padding: 80px 0 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-brand-section {
+    padding-right: 2rem;
+}
+
+.brand-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer-logo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 3px solid var(--white);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.brand-name {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--white);
+}
+
+.brand-tagline {
+    font-size: 0.9rem;
+    color: var(--lighter-pink);
+    margin: 0;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+.brand-description {
+    color: var(--lighter-pink);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+/* Newsletter - Formulario de suscripción por email */
+.newsletter-section {
+    margin-top: 2rem;
+}
+
+.newsletter-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--white);
+}
+
+.newsletter-form {
+    max-width: 300px;
+}
+
+.newsletter-input {
+    border: none;
+    border-radius: 25px 0 0 25px;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--text-dark);
+}
+
+.newsletter-input:focus {
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+    background: var(--white);
+}
+
+.newsletter-btn {
+    background: var(--secondary-pink);
+    border: none;
+    border-radius: 0 25px 25px 0;
+    padding: 12px 20px;
+    color: var(--white);
+    transition: all 0.3s ease;
+}
+
+.newsletter-btn:hover {
+    background: var(--dark-pink);
+    transform: translateX(2px);
+}
+
+/* Secciones del Footer - Navegación, categorías, contacto */
+.footer-section-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--white);
+    position: relative;
+}
+
+.footer-section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: var(--lighter-pink);
+    border-radius: 1px;
+}
+
+/* Enlaces de Navegación - Links del footer con iconos */
+.footer-nav-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-nav-links li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-nav-links a {
+    color: var(--lighter-pink);
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    padding: 0.3rem 0;
+}
+
+.footer-nav-links a:hover {
+    color: var(--white);
+    transform: translateX(5px);
+}
+
+.footer-nav-links i {
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+/* Categorías de Productos - Lista de categorías en el footer */
+.product-categories {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.product-link {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--lighter-pink);
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 0.5rem 0;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    padding-left: 0.5rem;
+}
+
+.product-link:hover {
+    color: var(--white);
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+}
+
+.product-link i {
+    font-size: 1rem;
+    width: 20px;
+    text-align: center;
+}
+
+/* Información de Contacto - Datos de contacto en el footer */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    color: var(--lighter-pink);
+    font-size: 0.9rem;
+}
+
+.contact-item i {
+    color: var(--white);
+    font-size: 1.1rem;
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+}
+
+.contact-label {
+    display: block;
+    font-weight: 600;
+    color: var(--white);
+    font-size: 0.8rem;
+    margin-bottom: 0.2rem;
+}
+
+.contact-item a {
+    color: var(--lighter-pink);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: var(--white);
+}
+
+/* Sección Social - Redes sociales en el footer */
+.social-section {
+    margin-top: 2rem;
+}
+
+.social-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--white);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.social-link:hover {
+    background: var(--white);
+    color: var(--primary-pink);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.social-link.facebook:hover {
+    color: #1877f2;
+}
+
+.social-link.tiktok:hover {
+    color: #000000;
+}
+
+.social-link.instagram:hover {
+    color: #e4405f;
+}
+
+/* Parte Inferior del Footer - Copyright y enlaces legales */
+.footer-bottom {
+    background: rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.copyright p {
+    margin: 0;
+    color: var(--lighter-pink);
+    font-size: 0.9rem;
+}
+
+.footer-links-bottom {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-links-bottom a {
+    color: var(--lighter-pink);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links-bottom a:hover {
+    color: var(--white);
+}
+
+.designed-by p {
+    margin: 0;
+    color: var(--lighter-pink);
+    font-size: 0.85rem;
+}
+
+.designed-by i {
+    color: #ff6b6b;
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Footer Responsivo - Adaptación a diferentes dispositivos */
+@media (max-width: 992px) {
+    .footer-brand-section {
+        padding-right: 0;
+    }
+    
+    .footer-bottom-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-main {
+        padding: 60px 0 30px;
+    }
+    
+    .footer-section-title {
+        margin-top: 2rem;
+    }
+    
+    .footer-section-title::after {
+        width: 30px;
+    }
+    
+    .newsletter-form {
+        max-width: 100%;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-main {
+        padding: 40px 0 20px;
+    }
+    
+    .brand-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-links-bottom {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+/* Eliminar estilos antiguos del footer - Compatibilidad */
+.footer {
+    display: none;
+}
+
+/* Diseño Responsivo - Media queries para adaptación móvil */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .product-card {
+        height: 250px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .btn-primary, .btn-outline-primary {
+        display: block;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-buttons .btn {
+        margin-right: 0 !important;
+    }
+}
+
+/* Animaciones de Scroll - Efectos al hacer scroll */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Estilos Modernos de Catálogo - Vista de productos mejorada */
+.catalog-modern {
+    background: linear-gradient(135deg, var(--soft-pink) 0%, var(--white) 100%);
+    min-height: 100vh;
+    padding-top: 100px;
+}
+
+.catalog-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.catalog-title {
+    font-size: 3rem;
+    font-weight: 700;
+    background: var(--gradient-pink);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+}
+
+.catalog-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Grid de Productos Moderno - Diseño responsive de productos */
+.product-grid-modern {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+/* Tarjetas de Producto Modernas - Diseño con efectos hover */
+.card-modern {
+    background: var(--white);
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 10px 30px var(--shadow-pink);
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid var(--lighter-pink);
+}
+
+.card-modern:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px var(--shadow-pink-hover);
+}
+
+.card-image-container {
+    position: relative;
+    overflow: hidden;
+    height: 250px;
+}
+
+.card-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.card-modern:hover .card-image-container img {
+    transform: scale(1.1);
+}
+
+.card-overlay-modern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient-pink);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-modern:hover .card-overlay-modern {
+    opacity: 0.9;
+}
+
+.card-overlay-text {
+    color: var(--white);
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.card-body-modern {
+    padding: 2rem;
+    text-align: center;
+}
+
+.card-title-modern {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary-pink);
+    margin-bottom: 0.5rem;
+}
+
+.card-text-modern {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.card-price-modern {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: var(--gradient-pink);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Estilos Modernos de Carrusel - Slider de productos */
+.carousel-modern {
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    background: var(--gradient-pink);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: brightness(0) invert(1);
+}
+
+/* Catálogo Responsivo - Adaptación a tablets y móviles */
+@media (max-width: 768px) {
+    .catalog-title {
+        font-size: 2.5rem;
+    }
+    
+    .product-grid-modern {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .card-modern {
+        margin: 0 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .catalog-title {
+        font-size: 2rem;
+    }
+    
+    .product-grid-modern {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .card-image-container {
+        height: 200px;
+    }
+}
+
+/* Barra de Scroll Personalizada - Estilo rosa para scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--lighter-pink);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gradient-pink);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-pink);
+}
+
+/* Efectos Glassmorphism - Efectos de vidrio esmerilado */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: var(--backdrop-blur);
+    -webkit-backdrop-filter: var(--backdrop-blur);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: var(--shadow-glass);
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: var(--backdrop-blur);
+    -webkit-backdrop-filter: var(--backdrop-blur);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: var(--shadow-glass);
+    border-radius: var(--border-radius-lg);
+}
+
+.glass-navbar {
+    background: rgba(233, 30, 99, 0.8) !important;
+    backdrop-filter: var(--backdrop-blur);
+    -webkit-backdrop-filter: var(--backdrop-blur);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Animaciones Mejoradas - Efectos de animación adicionales */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.animate-pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.animate-shimmer {
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.4) 50%,
+        transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+}
+
+.animate-slide-in-up {
+    animation: slideInUp 0.6s ease-out;
+}
+
+.animate-fade-in-scale {
+    animation: fadeInScale 0.5s ease-out;
+}
+
+/* Efectos Hover Mejorados - Efectos al pasar el mouse */
+.hover-lift {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px var(--shadow-pink-hover);
+}
+
+.hover-glow {
+    transition: all 0.3s ease;
+}
+
+.hover-glow:hover {
+    box-shadow: 0 0 30px rgba(233, 30, 99, 0.3);
+}
+
+/* Tarjetas de Producto Mejoradas - Efectos 3D y glass */
+.product-card-enhanced {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius-lg);
+    background: var(--white);
+    box-shadow: 0 10px 30px var(--shadow-pink);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.product-card-enhanced::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient-glass);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.product-card-enhanced:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 25px 50px var(--shadow-pink-hover);
+}
+
+.product-card-enhanced:hover::before {
+    opacity: 1;
+}
+
+/* Estilos de Modal Mejorados - Ventanas modales con efecto glass */
+.modal-glass {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: var(--backdrop-blur);
+    -webkit-backdrop-filter: var(--backdrop-blur);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.modal-content-glass {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: var(--backdrop-blur);
+    -webkit-backdrop-filter: var(--backdrop-blur);
+    border-radius: var(--border-radius-lg);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 20px 60px rgba(233, 30, 99, 0.2);
+}
+
+/* Tipografía Mejorada - Efectos de texto con gradiente */
+.text-gradient-pink {
+    background: var(--gradient-pink);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.text-shadow-pink {
+    text-shadow: 2px 2px 4px rgba(233, 30, 99, 0.3);
+}
+
+/* Estilos de Botón Mejorados - Botones con efecto glass */
+.btn-glass {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: var(--backdrop-blur);
+    -webkit-backdrop-filter: var(--backdrop-blur);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: var(--white);
+    transition: all 0.3s ease;
+}
+
+.btn-glass:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(233, 30, 99, 0.4);
+}
+
+/* Efectos Glass Responsivos - Adaptación para móviles */
+@media (max-width: 768px) {
+    .glass-effect,
+    .glass-card {
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+    }
+}
+
+/* Animación de Carga - Spinner de carga */
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--light-pink);
+    border-top: 4px solid var(--primary-pink);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Zoom de Imagen Mejorado - Efecto zoom en imágenes */
+.image-zoom-container {
+    overflow: hidden;
+    border-radius: var(--border-radius);
+}
+
+.image-zoom-container img {
+    transition: transform 0.6s ease;
+}
+
+.image-zoom-container:hover img {
+    transform: scale(1.15);
+}
+
+/* Efectos de Superposición de Gradiente - Overlays con gradiente */
+.gradient-overlay {
+    position: relative;
+}
+
+.gradient-overlay::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient-glass);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gradient-overlay:hover::after {
+    opacity: 1;
+}
+
+/* Efecto 3D en Tarjetas - Efecto de profundidad 3D */
+.card-3d {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.card-3d-inner {
+    transform: translateZ(20px);
+    transition: transform 0.3s ease;
+}
+
+.card-3d:hover .card-3d-inner {
+    transform: translateZ(40px);
+}
