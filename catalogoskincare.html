@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuidado Facial - Almas Store | Skincare Moderno</title>
+    <title>almasstorecr.github.io</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <!-- AOS Animacion -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Estilos adiccionales -->
+    <style>
+        :root {
+            --primary-pink: #FFB6C1;
+            --secondary-pink: #FF69B4;
+            --light-pink: #FFE4E1;
+            --dark-pink: #FF1493;
+            --rose-gold: #B76E79;
+            --soft-white: #FFF5F5;
+            --text-dark: #2C2C2C;
+            --text-light: #666666;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--soft-white) 0%, #FFFFFF 100%);
+            color: var(--text-dark);
+        }
+        
+        .skincare-hero {
+            background: linear-gradient(135deg, var(--primary-pink) 0%, var(--secondary-pink) 100%);
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .skincare-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1.5" fill="rgba(255,255,255,0.1)"/></svg>');
+            animation: float 20s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 2rem;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--dark-pink);
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-pink), var(--secondary-pink));
+            border-radius: 2px;
+        }
+        
+        .product-card-modern {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(255, 182, 193, 0.2);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        
+        .product-card-modern:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(255, 182, 193, 0.3);
+        }
+        
+        .product-image-container {
+            position: relative;
+            overflow: hidden;
+            height: 300px;
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        
+        .product-card-modern:hover .product-image {
+            transform: scale(1.1);
+        }
+        
+        .product-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 182, 193, 0.8), rgba(255, 105, 180, 0.8));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .product-card-modern:hover .product-overlay {
+            opacity: 1;
+        }
+        
+        .quick-view-btn {
+            background: white;
+            color: var(--dark-pink);
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .quick-view-btn:hover {
+            background: var(--dark-pink);
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+        }
+        
+        .product-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-brand {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary-pink);
+            margin-bottom: 1rem;
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--secondary-pink);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .filter-section {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(255, 182, 193, 0.1);
+        }
+        
+        .filter-btn {
+            background: transparent;
+            border: 2px solid var(--primary-pink);
+            color: var(--primary-pink);
+            padding: 8px 20px;
+            border-radius: 25px;
+            margin: 0 5px 10px 0;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--primary-pink);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .search-bar-modern {
+            border: 2px solid var(--primary-pink);
+            border-radius: 25px;
+            padding: 12px 20px;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .search-bar-modern:focus {
+            outline: none;
+            border-color: var(--secondary-pink);
+            box-shadow: 0 0 0 3px rgba(255, 182, 193, 0.2);
+        }
+        
+        .modal-content-modern {
+            border-radius: 20px;
+            border: none;
+            overflow: hidden;
+        }
+        
+        .modal-header-modern {
+            background: linear-gradient(135deg, var(--primary-pink), var(--secondary-pink));
+            color: white;
+            border: none;
+        }
+        
+        .modal-body-modern {
+            padding: 0;
+        }
+        
+        .modal-image-container {
+            position: relative;
+            width: 100%;
+            height: 700px; /* Altura aumentada para vista previa más grande */
+            overflow: hidden;
+            background-color: var(--soft-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .modal-product-image {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .modal-product-image:hover {
+            transform: scale(1.08); /* Efecto de zoom mejorado al pasar el cursor */
+        }
+        
+        /* Ajustes responsivos del modal */
+        @media (max-width: 992px) {
+            .modal-image-container {
+                height: 500px;
+                padding: 1rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .modal-image-container {
+                height: 400px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .modal-image-container {
+                height: 300px;
+                padding: 0.5rem;
+            }
+        }
+        
+        .carousel-indicators-modern {
+            bottom: 20px;
+        }
+        
+        .carousel-indicators-modern button {
+            background-color: var(--primary-pink);
+            border-radius: 50%;
+            width: 12px;
+            height: 12px;
+            margin: 0 5px;
+        }
+        
+        .navbar-modern {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(255, 182, 193, 0.1);
+        }
+        
+        .navbar-brand-modern {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--dark-pink) !important;
+        }
+        
+        .nav-link-modern {
+            color: var(--text-dark) !important;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link-modern:hover {
+            color: var(--secondary-pink) !important;
+        }
+        
+        .footer-modern {
+            background: linear-gradient(135deg, var(--primary-pink), var(--secondary-pink));
+            padding: 3rem 0;
+            margin-top: 5rem;
+            color: white;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .product-card-modern {
+                margin-bottom: 1.5rem;
+            }
+            
+            .filter-section {
+                padding: 1rem;
+            }
+            
+            .product-image-container {
+                height: 350px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .product-image-container {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background: white !important; box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="imgs/logo.jpg" alt="Logo" class="rounded-circle me-2" style="width: 40px; height: 40px;">
+                <span style="color: var(--dark-pink); font-weight: 700;">Almas Store</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html" style="color: var(--text-dark) !important; font-weight: 500;">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#productos" style="color: var(--text-dark) !important; font-weight: 500;">Productos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto" style="color: var(--text-dark) !important; font-weight: 500;">Contacto</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" style="color: var(--dark-pink) !important; font-weight: 600; background: var(--light-pink); padding: 0.5rem 1rem; border-radius: 25px; margin-left: 0.5rem;">
+                            <i class="bi bi-house me-1"></i>Volver al Inicio
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección Hero -->
+    <section class="skincare-hero">
+        <div class="container text-center">
+            <h1 class="hero-title" data-aos="fade-up">Cuidado Facial</h1>
+            <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">
+                Descubre nuestra colección premium de productos para el cuidado de tu piel
+            </p>
+        </div>
+    </section>
+
+    <!-- Contenido Principal -->
+    <main class="container-fluid py-5" style="margin-top: 2rem;">
+        <!-- Sección de Filtros -->
+        <div class="container">
+            <div class="filter-section" data-aos="fade-up">
+                <div class="text-center mb-4">
+                    <h2 class="section-title">Nuestros Productos</h2>
+                    <input type="text" class="search-bar-modern" placeholder="Buscar productos..." id="searchInput">
+                </div>
+                <div class="text-center">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="kits">Kits</button>
+                    <button class="filter-btn" data-filter="serums">Serums</button>
+                    <button class="filter-btn" data-filter="cremas">Cremas</button>
+                    <button class="filter-btn" data-filter="limpieza">Limpieza</button>
+                    <button class="filter-btn" data-filter="proteccion">Bloqueadores</button>
+                    <button class="filter-btn" data-filter="ojos">Ojos</button>
+                </div>
+            </div>
+        </div>
+
+    <!-- Grid de Productos -->
+        <div class="container">
+            <div class="row" id="productsContainer">
+                
+                <!-- KIT Facial 24k -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="kits">
+                    <div class="product-card-modern" data-aos="fade-up">
+                        <div class="product-image-container">
+                            <img src="skincare/24k.jpg" alt="KIT Facial 24k" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal" 
+                                        data-images='["skincare/24k.jpg"]' 
+                                        data-title="KIT Facial 24k gold colageno" 
+                                        data-brand="DR.RASHEL" 
+                                        data-price="₡10.000">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                            <span class="product-badge">Premium</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">KIT Facial 24k gold colageno</h3>
+                            <p class="product-brand">DR.RASHEL</p>
+                            <p class="product-price">₡10.000</p>
+                            <button class="btn btn-primary add-to-cart-btn" data-product="KIT Facial 24k gold colageno" data-price="10000" data-brand="DR.RASHEL">
+                                <i class="bi bi-cart-plus"></i> Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- KIT Facial Acido Hialuronico -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="kits">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="100">
+                        <div class="product-image-container">
+                            <img src="skincare/Kit.jpg" alt="KIT Acido Hialuronico" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal" 
+                                        data-images='["skincare/Kit.jpg", "skincare/Kit1.jpg"]' 
+                                        data-title="KIT Facial Acido Hialuronico" 
+                                        data-brand="MOND´SUB" 
+                                        data-price="₡12.000">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                            <span class="product-badge">Nuevo</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">KIT Facial Acido Hialuronico</h3>
+                            <p class="product-brand">MOND´SUB</p>
+                            <p class="product-price">₡12.000</p>
+                            <button class="btn btn-primary add-to-cart-btn" data-product="KIT Facial Acido Hialuronico" data-price="12000" data-brand="MOND´SUB">
+                                <i class="bi bi-cart-plus"></i> Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                  <!-- KIT Viajero -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="kits">
+                    <div class="product-card-modern" data-aos="fade-up">
+                        <div class="product-image-container">
+                            <img src="skincare/setviajero.jpg" alt="KIT Facial 24k" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal" 
+                                        data-images='["skincare/setviajero.jpg" , "skincare/setviajero1.jpg", "skincare/setviajero2.jpg", "skincare/setviajero3.jpg", "skincare/setviajero4.jpg"]' 
+                                        data-title="KIT Facial Viajero Vitamina C y Retinol" 
+                                        data-brand="DR.RASHEL" 
+                                        data-price="₡8.000">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                            <span class="product-badge">Premium</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">KIT Facial Viajero Vitamina C y Retinol</h3>
+                            <p class="product-brand">DR.RASHEL</p>
+                            <p class="product-price">₡8.000</p>
+                            <button class="btn btn-primary add-to-cart-btn" data-product="KIT Facial Viajero Vitamina C y Retinol" data-price="8000" data-brand="DR.RASHEL">
+                                <i class="bi bi-cart-plus"></i> Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Productos de colageno -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="all">
+                    <div class="product-card-modern" data-aos="fade-up">
+                        <div class="product-image-container">
+                            <img src="skincare/colageno.jpg" alt="KIT Facial 24k" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal" 
+                                        data-images='["skincare/colageno.jpg", "skincare/colageno1.jpg", "skincare/colageno2.jpg"]' 
+                                        data-title="Productos de Colageno" 
+                                        data-brand="DR.RASHEL" 
+                                        data-price="₡2.800 - ₡3.800">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                            <span class="product-badge">Premium</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Productos de Colageno</h3>
+                            <p class="product-brand">DR.RASHEL</p>
+                            <p class="product-price">₡2.800 - ₡3.800</p>
+                            <button class="btn btn-primary add-to-cart-btn" data-product="Productos de Colageno" data-price="2800" data-brand="DR.RASHEL">
+                                <i class="bi bi-cart-plus"></i> Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Duo de serum -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="serums">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="400">
+                        <div class="product-image-container">
+                            <img src="skincare/duoserum.webp" alt="Duo de serum" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal" 
+                                        data-images='["skincare/duoserum.webp", "skincare/duoserum1.jpg", "skincare/duoserum2.webp"]' 
+                                        data-title="Duo de serum" 
+                                        data-brand="DR.RASHEL" 
+                                        data-price="₡5.300">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Duo de serum</h3>
+                            <p class="product-brand">DR.RASHEL</p>
+                            <p class="product-price">₡5.300</p>
+                            <button class="btn btn-primary add-to-cart-btn" data-product="Duo de serum" data-price="5300" data-brand="DR.RASHEL">
+                                <i class="bi bi-cart-plus"></i> Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Serum -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="serums">
+                    <div class="product-card-modern" data-aos="fade-up">
+                        <div class="product-image-container">
+                            <img src="skincare/serum.jpg" alt="KIT Facial 24k" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal" 
+                                        data-images='["skincare/serum.jpg", "skincare/serum1.jpg", "skincare/serum2.jpg"]' 
+                                        data-title="Serum/Sueros Faciales" 
+                                        data-brand="DR.RASHEL - USHAS - MOND´SUB" 
+                                        data-price="₡2.300 - ₡2.500">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                            <span class="product-badge">Premium</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Serum/Sueros Faciales</h3>
+                            <p class="product-brand">DR.RASHEL - USHAS - MOND´SUB</p>
+                            <p class="product-price">₡2.300 - ₡2.500</p>
+                            <button class="btn btn-primary add-to-cart-btn" data-product="Serum/Sueros Faciales" data-price="2300" data-brand="DR.RASHEL - USHAS - MOND´SUB">
+                                <i class="bi bi-cart-plus"></i> Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Serum en barra -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="serums">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="500">
+                        <div class="product-image-container">
+                            <img src="skincare/serumbarra.jpg" alt="Serum en barra" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal" 
+                                        data-images='["skincare/serumbarra.jpg", "skincare/serumbarra1.jpg", "skincare/serumbarra2.jpg", "skincare/serumbarra3.jpg", "skincare/serumbarra4.jpg", "skincare/serumbarra5.jpg", "skincare/serumbarra6.jpg"]' 
+                                        data-title="Serum en barra" 
+                                        data-brand="DR.RASHEL" 
+                                        data-price="₡2.500">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                            <span class="product-badge">Popular</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Serum en barra</h3>
+                            <p class="product-brand">DR.RASHEL</p>
+                            <p class="product-price">₡2.500</p>
+                            <button class="btn btn-primary add-to-cart-btn" data-product="Serum en barra" data-price="2500" data-brand="DR.RASHEL">
+                                <i class="bi bi-cart-plus"></i> Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Parche para espinillas -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="all">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="600">
+                        <div class="product-image-container">
+                            <img src="skincare/parcheacne.jpg" alt="Parche para espinillas" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal" 
+                                        data-images='["skincare/parcheacne.jpg"]' 
+                                        data-title="Parche para espinillas 36 piezas" 
+                                        data-brand="YMXERCOS" 
+                                        data-price="₡1.300">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Parche para espinillas 36 piezas</h3>
+                            <p class="product-brand">YMXERCOS</p>
+                            <p class="product-price">₡1.300</p>
+                            <button class="btn btn-primary add-to-cart-btn" data-product="Parche para espinillas 36 piezas" data-price="1300" data-brand="YMXERCOS">
+                                <i class="bi bi-cart-plus"></i> Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Parche para espinillas -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="all">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="600">
+                        <div class="product-image-container">
+                            <img src="skincare/parcheacne1.jpg" alt="Parche para espinillas" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal" 
+                                        data-images='["skincare/parcheacne1.jpg", "skincare/parcheacne2.jpg"]' 
+                                        data-title="Parche para espinillas 36 piezas" 
+                                        data-brand="THE RIGHT CHOICE" 
+                                        data-price="₡1.000">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Parche para espinillas 36 piezas</h3>
+                            <p class="product-brand">THE RIGHT CHOICE</p>
+                            <p class="product-price">₡1.000</p>
+                            <button class="btn btn-primary add-to-cart-btn" data-product="Parche para espinillas 36 piezas" data-price="1000" data-brand="THE RIGHT CHOICE">
+                                <i class="bi bi-cart-plus"></i> Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Jabones Faciales -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="limpieza">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="700">
+                        <div class="product-image-container">
+                            <img src="skincare/jabon.jpg" alt="Jabones Faciales" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal" 
+                                        data-images='["skincare/jabon.jpg", "skincare/jabon1.jpg", "skincare/jabon2.jpg", "skincare/jabon3.jpg"]' 
+                                        data-title="Jabones Faciales" 
+                                        data-brand="DR.RASHEL" 
+                                        data-price="₡2.300 - ₡3.300">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Jabones Faciales</h3>
+                            <p class="product-brand">DR.RASHEL</p>
+                            <p class="product-price">₡2.300 - ₡3.300</p>
+                            <button class="btn btn-primary add-to-cart-btn" data-product="Jabones Faciales" data-price="2300" data-brand="DR.RASHEL">
+                                <i class="bi bi-cart-plus"></i> Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Espumas faciales -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="limpieza">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="800">
+                        <div class="product-image-container">
+                            <img src="skincare/espumafacial.jpg" alt="Espumas faciales" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal" 
+                                        data-images='["skincare/espumafacial.jpg", "skincare/espumafacial1.jpg", "skincare/espumafacial2.jpg"]' 
+                                        data-title="Espumas faciales" 
+                                        data-brand="DR.RASHEL - SAS - SADOER" 
+                                        data-price="₡2.400 - ₡3.500">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Espumas faciales</h3>
+                            <p class="product-brand">DR.RASHEL - SAS - SADOER</p>
+                            <p class="product-price">₡2.400 - ₡3.500</p>
+                            <button class="btn btn-primary add-to-cart-btn" data-product="Espumas faciales" data-price="2400" data-brand="DR.RASHEL - SAS - SADOER">
+                                <i class="bi bi-cart-plus"></i> Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exfoliante facial -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="limpieza">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="900">
+                        <div class="product-image-container">
+                            <img src="skincare/exfoliantefacial.webp" alt="Exfoliante facial" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal" 
+                                        data-images='["skincare/exfoliantefacial.webp", "skincare/exfoliantefacial1.webp"]' 
+                                        data-title="Exfoliante facial Acido Hialuronico" 
+                                        data-brand="DR.RASHEL" 
+                                        data-price="₡3.300">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Exfoliante facial Acido Hialuronico</h3>
+                            <p class="product-brand">DR.RASHEL</p>
+                            <p class="product-price">₡3.300</p>
+                            <button class="btn btn-primary add-to-cart-btn" data-product="Exfoliante facial Acido Hialuronico" data-price="3300" data-brand="DR.RASHEL">
+                                <i class="bi bi-cart-plus"></i> Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Crema acido hialuronico -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="cremas">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="500">
+                        <div class="product-image-container">
+                            <img src="skincare/crema.jpg" alt="Crema facial" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal" 
+                                        data-images='["skincare/crema.jpg", "skincare/crema1.webp"]' 
+                                        data-title="Crema Facial Acido Hialuronico" 
+                                        data-brand="DR.RASHEL" 
+                                        data-price="₡3.800">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Crema Facial Acido Hialuronico</h3>
+                            <p class="product-brand">DR.RASHEL</p>
+                            <p class="product-price">₡3.800</p>
+                            <button class="btn btn-primary add-to-cart-btn" data-product="Crema Facial Acido Hialuronico" data-price="3800" data-brand="DR.RASHEL">
+                                <i class="bi bi-cart-plus"></i> Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contorno de ojos DR.Rashel -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="ojos">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="500">
+                        <div class="product-image-container">
+                            <img src="skincare/contornoa.webp" alt="Contorno de ojos" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal" 
+                                        data-images='["skincare/contornoa.webp", "skincare/contornoa1.webp", "skincare/contornoa2.webp"]' 
+                                        data-title="Contorno de ojos" 
+                                        data-brand="DR.RASHEL" 
+                                        data-price="₡3.500">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Contorno de ojos</h3>
+                            <p class="product-brand">DR.RASHEL</p>
+                            <p class="product-price">₡3.500</p>
+                            <button class="btn btn-primary add-to-cart-btn" data-product="Contorno de ojos" data-price="3500" data-brand="DR.RASHEL">
+                                <i class="bi bi-cart-plus"></i> Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Contorno de ojos -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="ojos">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="500">
+                        <div class="product-image-container">
+                            <img src="skincare/contorno.jpg" alt="Contorno de ojos" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal" 
+                                        data-images='["skincare/contorno.jpg", "skincare/contorno1.jpg"]' 
+                                        data-title="Contorno de ojos" 
+                                        data-brand="MOND´SUB" 
+                                        data-price="₡1.700">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Contorno de ojos</h3>
+                            <p class="product-brand">MOND´SUB</p>
+                            <p class="product-price">₡1.700</p>
+                            <button class="btn btn-primary add-to-cart-btn" data-product="Contorno de ojos" data-price="1700" data-brand="MOND´SUB">
+                                <i class="bi bi-cart-plus"></i> Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bloqueadores Faciales -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="proteccion">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="1000">
+                        <div class="product-image-container">
+                            <img src="skincare/bloqueador.jpg" alt="Bloqueadores Faciales" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal" 
+                                        data-images='["skincare/bloqueador.jpg", "skincare/bloqueador1.jpg", "skincare/bloqueador2.jpg", "skincare/bloqueador3.jpg"]' 
+                                        data-title="Bloqueadores Faciales y Corporales" 
+                                        data-brand="KISS BEAUTY - WOKALI - ESTELIN" 
+                                        data-price="₡1.200 - ₡3.400">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Bloqueadores Faciales y Corporales</h3>
+                            <p class="product-brand">KISS BEAUTY - WOKALI - ESTELIN</p>
+                            <p class="product-price">₡1.200 - ₡3.400</p>
+                            <button class="btn btn-primary add-to-cart-btn" data-product="Bloqueadores Faciales y Corporales" data-price="1200" data-brand="KISS BEAUTY - WOKALI - ESTELIN">
+                                <i class="bi bi-cart-plus"></i> Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bloqueadores con color -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="proteccion">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="1100">
+                        <div class="product-image-container">
+                            <img src="skincare/bloqueadorcolor.png" alt="Bloqueadores con color" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal" 
+                                        data-images='["skincare/bloqueadorcolor.png", "skincare/bloqueadorcolor1.jpg", "skincare/bloqueadorcolor2.jpg"]' 
+                                        data-title="Bloqueadores Faciales con color" 
+                                        data-brand="KISS BEAUTY - KARITE" 
+                                        data-price="₡1.200 - ₡2.500">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Bloqueadores Faciales con color</h3>
+                            <p class="product-brand">KISS BEAUTY - KARITE</p>
+                            <p class="product-price">₡1.200 - ₡2.500</p>
+                            <button class="btn btn-primary add-to-cart-btn" data-product="Bloqueadores Faciales con color" data-price="1200" data-brand="KISS BEAUTY - KARITE">
+                                <i class="bi bi-cart-plus"></i> Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Parches para ojeras -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="ojos">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="500">
+                        <div class="product-image-container">
+                            <img src="skincare/ojeras.jpg" alt="Parche para ojeras" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal" 
+                                        data-images='["skincare/ojeras.jpg", "skincare/ojeras1.jpg"]' 
+                                        data-title="Parches para ojeras" 
+                                        data-brand="BIOAQUA" 
+                                        data-price="₡2.300">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Parches para ojeras</h3>
+                            <p class="product-brand">BIOAQUA</p>
+                            <p class="product-price">₡2.300</p>
+                            <button class="btn btn-primary add-to-cart-btn" data-product="Parches para ojeras" data-price="2300" data-brand="BIOAQUA">
+                                <i class="bi bi-cart-plus"></i> Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+               
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal de Producto -->
+    <div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content modal-content-modern">
+                <div class="modal-header modal-header-modern">
+                    <h5 class="modal-title" id="modalTitle"></h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <div class="row g-0">
+                        <div class="col-lg-8">
+                            <div id="modalCarousel" class="carousel slide h-100" data-bs-ride="carousel">
+                                <div class="carousel-inner h-100" id="modalCarouselInner">
+                                    <!-- Images will be inserted here -->
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#modalCarousel" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Anterior</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#modalCarousel" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Siguiente</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="p-4 h-100 d-flex flex-column justify-content-between">
+                                <div>
+                                    <h4 id="modalProductTitle" class="product-title mb-3"></h4>
+                                    <p id="modalProductBrand" class="product-brand mb-2"></p>
+                                    <p id="modalProductPrice" class="product-price mb-4 fs-2"></p>
+                                </div>
+                                <div class="text-center">
+                                    <a href="https://wa.me/50671073953" class="btn btn-primary w-100 py-3" style="background: var(--secondary-pink); border: none; font-size: 1.1rem;">
+                                        <i class="bi bi-whatsapp me-2"></i>Consultar por WhatsApp
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botón Volver Arriba -->
+    <button id="backToTop" class="btn btn-primary rounded-circle" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; background: linear-gradient(135deg, var(--primary-pink), var(--secondary-pink)); border: none; display: none;">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- Pie de Página Profesional -->
+    <footer class="footer-modern">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5 style="color: white; font-weight: 600;">Almas Store</h5>
+                    <p style="color: rgba(255,255,255,0.8);">Productos premium de skincare y belleza seleccionados especialmente para ti.</p>
+                    <div class="mt-3">
+                        <a href="https://www.facebook.com/Almas.StoreCR/" target="_blank" class="text-decoration-none me-3" style="color: white;">
+                            <i class="bi bi-facebook fs-4"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@almas.store.cr" target="_blank" class="text-decoration-none me-3" style="color: white;">
+                            <i class="bi bi-tiktok fs-4"></i>
+                        </a>
+                        <a href="https://instagram.com/almas_storecr" target="_blank" class="text-decoration-none" style="color: white;">
+                            <i class="bi bi-instagram fs-4"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5 style="color: white; font-weight: 600;">Enlaces Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" style="color: rgba(255,255,255,0.8); text-decoration: none;">Inicio</a></li>
+                        <li><a href="#productos" style="color: rgba(255,255,255,0.8); text-decoration: none;">Productos</a></li>
+                        <li><a href="catalogoskincare.html" style="color: rgba(255,255,255,0.8); text-decoration: none;">Cuidado Facial</a></li>
+                        <li><a href="catalogomaquillaje.html" style="color: rgba(255,255,255,0.8); text-decoration: none;">Maquillaje</a></li>
+                        <li><a href="catalogopersonal.html" style="color: rgba(255,255,255,0.8); text-decoration: none;">Cuidado Corporal</a></li>
+                        <li><a href="catalogocabello.html" style="color: rgba(255,255,255,0.8); text-decoration: none;">Cuidado del Cabello</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5 style="color: white; font-weight: 600;">Contacto</h5>
+                    <p style="color: rgba(255,255,255,0.8); margin: 0;">
+                        <i class="bi bi-whatsapp me-2"></i>
+                        <a href="https://wa.me/50671073953" style="color: rgba(255,255,255,0.8); text-decoration: none;">+506 7107-3953</a>
+                    </p>
+                    <p style="color: rgba(255,255,255,0.8); margin: 0;">
+                        <i class="bi bi-envelope me-2"></i>
+                        <a href="mailto:almasstorecr@gmail.com" style="color: rgba(255,255,255,0.8); text-decoration: none;">almasstorecr@gmail.com</a>
+                    </p>
+                    <p style="color: rgba(255,255,255,0.8); margin: 0;">
+                        <i class="bi bi-geo-alt me-2"></i>
+                        San Roque de Barva, Heredia
+                    </p>
+                </div>
+            </div>
+            <hr style="border-color: rgba(255,255,255,0.3);">
+            <div class="text-center">
+                <p class="mb-0" style="color: rgba(255,255,255,0.8);">&copy; 2025 Almas Store. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="cart.js"></script>
+    
+    <script>
+        // Inicializar AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        // Botón Volver Arriba
+        const botonVolverArriba = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                botonVolverArriba.style.display = 'block';
+            } else {
+                botonVolverArriba.style.display = 'none';
+            }
+        });
+        
+        botonVolverArriba.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Funcionalidad del Modal de Producto
+        const modalProducto = document.getElementById('productModal');
+        modalProducto.addEventListener('show.bs.modal', function (event) {
+            const boton = event.relatedTarget;
+            const imagenes = JSON.parse(boton.getAttribute('data-images'));
+            const titulo = boton.getAttribute('data-title');
+            const marca = boton.getAttribute('data-brand');
+            const precio = boton.getAttribute('data-price');
+
+            // Actualizar contenido del modal
+            document.getElementById('modalTitle').textContent = titulo;
+            document.getElementById('modalProductTitle').textContent = titulo;
+            document.getElementById('modalProductBrand').textContent = marca;
+            document.getElementById('modalProductPrice').textContent = precio;
+
+            // Actualizar carrusel
+            const carruselInterno = document.getElementById('modalCarouselInner');
+            carruselInterno.innerHTML = '';
+            
+            // Limpiar indicadores existentes
+            const indicadoresExistentes = document.querySelectorAll('.carousel-indicators-modern');
+            indicadoresExistentes.forEach(indicator => indicator.remove());
+            
+            imagenes.forEach((imagen, indice) => {
+                const item = document.createElement('div');
+                item.className = `carousel-item ${indice === 0 ? 'active' : ''}`;
+                item.innerHTML = `
+                    <div class="modal-image-container">
+                        <img src="${imagen}" class="modal-product-image" alt="${titulo}">
+                    </div>
+                `;
+                carruselInterno.appendChild(item);
+            });
+
+            // Agregar indicadores del carrusel si hay múltiples imágenes
+            if (imagenes.length > 1) {
+                const contenedorIndicadores = document.createElement('div');
+                contenedorIndicadores.className = 'carousel-indicators-modern';
+                contenedorIndicadores.style.position = 'absolute';
+                contenedorIndicadores.style.bottom = '10px';
+                contenedorIndicadores.style.left = '50%';
+                contenedorIndicadores.style.transform = 'translateX(-50%)';
+                contenedorIndicadores.style.display = 'flex';
+                contenedorIndicadores.style.gap = '8px';
+                contenedorIndicadores.style.zIndex = '1000';
+                
+                imagenes.forEach((_, indice) => {
+                    const indicador = document.createElement('button');
+                    indicador.type = 'button';
+                    indicador.setAttribute('data-bs-target', '#modalCarousel');
+                    indicador.setAttribute('data-bs-slide-to', indice);
+                    indicador.setAttribute('aria-label', `Diapositiva ${indice + 1}`);
+                    indicador.style.width = '12px';
+                    indicador.style.height = '12px';
+                    indicador.style.borderRadius = '50%';
+                    indicador.style.border = 'none';
+                    indicador.style.backgroundColor = indice === 0 ? 'var(--secondary-pink)' : 'var(--primary-pink)';
+                    indicador.style.cursor = 'pointer';
+                    indicador.style.transition = 'background-color 0.3s ease';
+                    
+                    contenedorIndicadores.appendChild(indicador);
+                });
+
+                // Agregar indicadores al carrusel
+                const carrusel = document.getElementById('modalCarousel');
+                carrusel.appendChild(contenedorIndicadores);
+            }
+        });
+
+        // Actualizar indicadores del carrusel al cambiar de diapositiva
+        document.getElementById('modalCarousel').addEventListener('slid.bs.carousel', function (event) {
+            const indicadores = this.querySelectorAll('.carousel-indicators-modern button');
+            indicadores.forEach((indicador, indice) => {
+                indicador.style.backgroundColor = indice === event.to ? 'var(--secondary-pink)' : 'var(--primary-pink)';
+            });
+        });
+
+        // Funcionalidad de Filtro
+        const botonesFiltro = document.querySelectorAll('.filter-btn');
+        const itemsProducto = document.querySelectorAll('.product-item');
+        const entradaBusqueda = document.getElementById('searchInput');
+
+        botonesFiltro.forEach(boton => {
+            boton.addEventListener('click', () => {
+                // Remover clase activa de todos los botones
+                botonesFiltro.forEach(btn => btn.classList.remove('active'));
+                // Agregar clase activa al botón clickeado
+                boton.classList.add('active');
+
+                const filtro = boton.getAttribute('data-filter');
+                
+                itemsProducto.forEach(item => {
+                    if (filtro === 'all' || item.getAttribute('data-category') === filtro) {
+                        item.style.display = 'block';
+                        item.style.animation = 'fadeIn 0.5s ease';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Funcionalidad de Búsqueda
+        entradaBusqueda.addEventListener('input', (e) => {
+            const terminoBusqueda = e.target.value.toLowerCase();
+            
+            itemsProducto.forEach(item => {
+                const titulo = item.querySelector('.product-title').textContent.toLowerCase();
+                const marca = item.querySelector('.product-brand').textContent.toLowerCase();
+                
+                if (titulo.includes(terminoBusqueda) || marca.includes(terminoBusqueda)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+
+        // Desplazamiento suave para enlaces de anclaje
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const objetivo = document.querySelector(this.getAttribute('href'));
+                if (objetivo) {
+                    objetivo.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maquillaje - Almas Store | Maquillaje Profesional</title>
+    <title>almasstorecr.github.io</title>
+    
+    <!-- Google Fonts - Fuentes tipográficas para el diseño -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS - Framework CSS para diseño responsivo -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons - Iconografía para la interfaz -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <!-- AOS Animation - Biblioteca para animaciones al hacer scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS - Estilos personalizados del sitio -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Additional Makeup Styles - Estilos específicos para la sección de maquillaje -->
+    <style>
+        /* Variables CSS personalizadas para colores temáticos de maquillaje */
+        :root {
+            --primary-pink: #FFB6C1;      /* Rosa principal - tono suave */
+            --secondary-pink: #FF69B4;    /* Rosa secundario - tono vibrante */
+            --light-pink: #FFE4E1;        /* Rosa claro - para fondos */
+            --dark-pink: #FF1493;         /* Rosa oscuro - para acentos */
+            --rose-gold: #B76E79;         /* Rosa dorado - tono elegante */
+            --soft-white: #FFF5F5;        /* Blanco suave - fondo principal */
+            --text-dark: #2C2C2C;         /* Texto oscuro - para contenido */
+            --text-light: #666666;        /* Texto claro - para detalles */
+        }
+        
+        /* Estilos generales del cuerpo de la página */
+        body {
+            font-family: 'Poppins', sans-serif;  /* Fuente principal para el texto */
+            background: linear-gradient(135deg, var(--soft-white) 0%, #FFFFFF 100%);  /* Fondo con degradado suave */
+            color: var(--text-dark);  /* Color del texto principal */
+        }
+        
+        /* Sección hero principal con imagen de fondo y efectos */
+        .makeup-hero {
+            background: linear-gradient(135deg, var(--primary-pink) 0%, var(--secondary-pink) 100%);  /* Degradado rosa */
+            min-height: 60vh;  /* Altura mínima de 60% del viewport */
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Efecto de partículas flotantes en el fondo del hero */
+        .makeup-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1.5" fill="rgba(255,255,255,0.1)"/></svg>');
+            animation: float 20s ease-in-out infinite;  /* Animación continua de flotación */
+        }
+        
+        /* Animación para el efecto de partículas flotantes */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        
+        /* Título principal del hero con estilo elegante */
+        .hero-title {
+            font-family: 'Playfair Display', serif;  /* Fuente elegante para el título */
+            font-size: 3.5rem;  /* Tamaño grande para impacto visual */
+            font-weight: 700;  /* Peso de fuente en negrita */
+            color: white;  /* Color blanco para contraste con el fondo */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);  /* Sombra suave para mejor legibilidad */
+        }
+        
+        /* Subtítulo del hero con texto más pequeño y translúcido */
+        .hero-subtitle {
+            font-size: 1.3rem;  /* Tamaño mediano para el subtítulo */
+            color: rgba(255,255,255,0.9);  /* Blanco con 90% de opacidad */
+            margin-bottom: 2rem;  /* Margen inferior para separación */
+        }
+        
+        /* Título de sección con estilo distintivo */
+        .section-title {
+            font-family: 'Playfair Display', serif;  /* Fuente elegante para títulos de sección */
+            font-size: 2.5rem;  /* Tamaño grande pero menor que el hero */
+            color: var(--dark-pink);  /* Color rosa oscuro para acento */
+            margin-bottom: 1rem;  /* Margen inferior estándar */
+            position: relative;  /* Posición relativa para el pseudo-elemento */
+        }
+        
+        /* Línea decorativa debajo del título de sección */
+        .section-title::after {
+            content: '';  /* Contenido vacío para el pseudo-elemento */
+            position: absolute;  /* Posición absoluta respecto al título */
+            bottom: -10px;  /* Posicionado 10px debajo del título */
+            left: 50%;  /* Centrado horizontalmente */
+            transform: translateX(-50%);  /* Ajuste para centrado perfecto */
+            width: 60px;  /* Ancho de la línea */
+            height: 3px;  /* Altura/grosor de la línea */
+            background: linear-gradient(90deg, var(--primary-pink), var(--secondary-pink));  /* Degradado rosa */
+            border-radius: 2px;  /* Bordes ligeramente redondeados */
+        }
+        
+        /* Tarjeta de producto con diseño moderno y efectos de hover */
+        .product-card-modern {
+            background: white;  /* Fondo blanco para la tarjeta */
+            border-radius: 20px;  /* Bordes redondeados grandes */
+            overflow: hidden;  /* Oculta contenido que sobresale */
+            box-shadow: 0 10px 30px rgba(255, 182, 193, 0.2);  /* Sombra suave rosa */
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);  /* Transición suave con easing personalizado */
+            position: relative;  /* Posición relativa para elementos absolutos internos */
+            margin-bottom: 2rem;  /* Margen inferior para separación */
+        }
+        
+        /* Efecto hover para la tarjeta de producto */
+        .product-card-modern:hover {
+            transform: translateY(-10px) scale(1.02);  /* Elevación y ligero aumento de tamaño */
+            box-shadow: 0 20px 40px rgba(255, 182, 193, 0.3);  /* Sombra más intensa al hacer hover */
+        }
+        
+        /* Contenedor de imagen del producto */
+        .product-image-container {
+            position: relative;  /* Posición relativa para elementos absolutos internos */
+            overflow: hidden;  /* Oculta partes de la imagen que sobresalgan */
+            height: 300px;  /* Altura fija para consistencia */
+        }
+        
+        /* Imagen del producto */
+        .product-image {
+            width: 100%;  /* Ancho completo del contenedor */
+            height: 100%;  /* Altura completa del contenedor */
+            object-fit: cover;  /* Recorta la imagen para llenar el contenedor */
+            transition: transform 0.4s ease;  /* Transición suave para efectos de zoom */
+        }
+        
+        /* Efecto zoom en la imagen al hacer hover en la tarjeta */
+        .product-card-modern:hover .product-image {
+            transform: scale(1.1);  /* Zoom del 10% en la imagen */
+        }
+        
+        /* Overlay que aparece al hacer hover sobre la imagen */
+        .product-overlay {
+            position: absolute;  /* Posición absoluta sobre la imagen */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 182, 193, 0.8), rgba(255, 105, 180, 0.8));  /* Degradado rosa translúcido */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;  /* Inicialmente invisible */
+            transition: opacity 0.3s ease;  /* Transición suave para la opacidad */
+        }
+        
+        /* Mostrar overlay al hacer hover */
+        .product-card-modern:hover .product-overlay {
+            opacity: 1;  /* Hacer visible el overlay */
+        }
+        
+        /* Botón de vista rápida en el overlay */
+        .quick-view-btn {
+            background: white;  /* Fondo blanco */
+            color: var(--dark-pink);  /* Texto rosa oscuro */
+            border: none;  /* Sin borde */
+            padding: 12px 24px;  /* Espaciado interno */
+            border-radius: 25px;  /* Bordes completamente redondeados */
+            font-weight: 600;  /* Peso de fuente seminegrita */
+            cursor: pointer;  /* Cursor de puntero */
+            transition: all 0.3s ease;  /* Transición suave para todos los cambios */
+        }
+        
+        /* Efecto hover para el botón de vista rápida */
+        .quick-view-btn:hover {
+            background: var(--dark-pink);  /* Fondo rosa oscuro */
+            color: white;  /* Texto blanco */
+            transform: scale(1.05);  /* Ligero aumento de tamaño */
+        }
+        
+        /* Contenedor de información del producto */
+        .product-info {
+            padding: 1.5rem;  /* Espaciado interno */
+        }
+        
+        /* Título del producto */
+        .product-title {
+            font-family: 'Playfair Display', serif;  /* Fuente elegante para el título */
+            font-size: 1.3rem;  /* Tamaño de fuente mediano */
+            font-weight: 600;  /* Peso de fuente seminegrita */
+            color: var(--text-dark);  /* Color de texto oscuro */
+            margin-bottom: 0.5rem;  /* Margen inferior pequeño */
+        }
+        
+        /* Marca del producto */
+        .product-brand {
+            color: var(--text-light);  /* Color de texto claro */
+            font-size: 0.9rem;  /* Tamaño de fuente pequeño */
+            margin-bottom: 0.5rem;  /* Margen inferior pequeño */
+        }
+        
+        /* Precio del producto */
+        .product-price {
+            font-size: 1.5rem;  /* Tamaño de fuente grande */
+            font-weight: 700;  /* Peso de fuente negrita */
+            color: var(--secondary-pink);  /* Color rosa secundario */
+            margin-bottom: 1rem;  /* Margen inferior estándar */
+        }
+        
+        /* Badge/etiqueta para productos destacados */
+        .product-badge {
+            position: absolute;  /* Posición absoluta sobre la imagen */
+            top: 15px;  /* Distancia desde la parte superior */
+            right: 15px;  /* Distancia desde la derecha */
+            background: var(--secondary-pink);  /* Fondo rosa secundario */
+            color: white;  /* Texto blanco */
+            padding: 5px 15px;  /* Espaciado interno */
+            border-radius: 20px;  /* Bordes redondeados */
+            font-size: 0.8rem;  /* Tamaño de fuente pequeño */
+            font-weight: 600;  /* Peso de fuente seminegrita */
+        }
+        
+        /* Sección de filtros para categorizar productos */
+        .filter-section {
+            background: white;  /* Fondo blanco para la sección */
+            border-radius: 15px;  /* Bordes redondeados */
+            padding: 2rem;  /* Espaciado interno generoso */
+            margin-bottom: 2rem;  /* Margen inferior para separación */
+            box-shadow: 0 5px 15px rgba(255, 182, 193, 0.1);  /* Sombra suave rosa */
+        }
+        
+        /* Botones de filtro por categoría */
+        .filter-btn {
+            background: transparent;  /* Fondo transparente inicialmente */
+            border: 2px solid var(--primary-pink);  /* Borde rosa principal */
+            color: var(--primary-pink);  /* Texto rosa principal */
+            padding: 8px 20px;  /* Espaciado interno */
+            border-radius: 25px;  /* Bordes completamente redondeados */
+            margin: 0 5px 10px 0;  /* Margen entre botones */
+            transition: all 0.3s ease;  /* Transición suave para todos los cambios */
+            cursor: pointer;  /* Cursor de puntero al pasar sobre el botón */
+        }
+        
+        /* Efectos hover y estado activo para botones de filtro */
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--primary-pink);  /* Fondo rosa principal */
+            color: white;  /* Texto blanco */
+            transform: translateY(-2px);  /* Elevación ligera al hacer hover */
+        }
+        
+        /* Barra de búsqueda con diseño moderno */
+        .search-bar-modern {
+            border: 2px solid var(--primary-pink);  /* Borde rosa principal */
+            border-radius: 25px;  /* Bordes completamente redondeados */
+            padding: 12px 20px;  /* Espaciado interno cómodo */
+            width: 100%;  /* Ancho completo del contenedor */
+            max-width: 400px;  /* Ancho máximo para diseño responsivo */
+            margin: 0 auto 2rem;  /* Centrado horizontal con margen inferior */
+            transition: all 0.3s ease;  /* Transición suave para todos los cambios */
+        }
+        
+        /* Efecto focus para la barra de búsqueda */
+        .search-bar-modern:focus {
+            outline: none;  /* Eliminar contorno por defecto */
+            border-color: var(--secondary-pink);  /* Cambiar color del borde al rosa secundario */
+            box-shadow: 0 0 0 3px rgba(255, 182, 193, 0.2);  /* Sombra de enfoque suave */
+        }
+        
+        /* Contenido del modal con diseño moderno */
+        .modal-content-modern {
+            border-radius: 20px;  /* Bordes redondeados grandes */
+            border: none;  /* Sin borde por defecto */
+            overflow: hidden;  /* Oculta contenido que sobresalga */
+        }
+        
+        /* Encabezado del modal con degradado rosa */
+        .modal-header-modern {
+            background: linear-gradient(135deg, var(--primary-pink), var(--secondary-pink));  /* Degradado rosa */
+            color: white;  /* Texto blanco para contraste */
+            border: none;  /* Sin borde inferior */
+        }
+        
+        /* Cuerpo del modal sin padding para diseño limpio */
+        .modal-body-modern {
+            padding: 0;  /* Sin padding para usar todo el espacio disponible */
+        }
+        
+        /* Contenedor de imagen del modal para vista ampliada */
+        .modal-image-container {
+            position: relative;  /* Posición relativa para elementos internos */
+            width: 100%;  /* Ancho completo */
+            height: 600px;  /* Altura aumentada para vista previa más grande */
+            overflow: hidden;  /* Oculta partes de la imagen que sobresalgan */
+            background-color: var(--soft-white);  /* Fondo blanco suave */
+            display: flex;  /* Flexbox para centrado */
+            align-items: center;  /* Centrado vertical */
+            justify-content: center;  /* Centrado horizontal */
+        }
+
+        /* Imagen del producto en el modal */
+        .modal-product-image {
+            width: 100%;  /* Ancho completo del contenedor */
+            height: 100%;  /* Altura completa del contenedor */
+            object-fit: contain;  /* Mantiene la proporción de la imagen sin recortar */
+            transition: transform 0.3s ease;  /* Transición suave para efectos de zoom */
+        }
+
+        /* Efecto zoom al pasar el cursor sobre la imagen del modal */
+        .modal-product-image:hover {
+            transform: scale(1.05);  /* Zoom del 5% al hacer hover */
+        }
+
+        /* Elemento individual del carrusel */
+        .carousel-item {
+            height: 100%;  /* Altura completa del contenedor padre */
+        }
+
+        /* Contenedor interno del carrusel */
+        .carousel-inner {
+            height: 100%;  /* Altura completa para llenar el espacio disponible */
+        }
+        
+        /* Indicadores del carrusel con posición personalizada */
+        .carousel-indicators-modern {
+            bottom: 20px;  /* Posición desde la parte inferior */
+        }
+        
+        /* Botones de los indicadores del carrusel */
+        .carousel-indicators-modern button {
+            background-color: var(--primary-pink);  /* Color rosa principal */
+            border-radius: 50%;  /* Forma circular */
+            width: 12px;  /* Ancho de los indicadores */
+            height: 12px;  /* Altura de los indicadores */
+            margin: 0 5px;  /* Espaciado entre indicadores */
+        }
+        
+        /* Barra de navegación moderna con efecto de vidrio esmerilado */
+        .navbar-modern {
+            background: rgba(255, 255, 255, 0.95);  /* Fondo blanco semi-transparente */
+            backdrop-filter: blur(10px);  /* Efecto de desenfoque para estilo glassmorphism */
+            box-shadow: 0 2px 20px rgba(255, 182, 193, 0.1);  /* Sombra suave rosa */
+        }
+        
+        /* Marca/logo de la barra de navegación */
+        .navbar-brand-modern {
+            font-family: 'Playfair Display', serif;  /* Fuente elegante para la marca */
+            font-weight: 700;  /* Peso de fuente negrita */
+            color: var(--dark-pink) !important;  /* Color rosa oscuro con prioridad */
+        }
+        
+        /* Enlaces de navegación modernos */
+        .nav-link-modern {
+            color: var(--text-dark) !important;  /* Color de texto oscuro con prioridad */
+            font-weight: 500;  /* Peso de fuente mediano */
+            transition: color 0.3s ease;  /* Transición suave para cambios de color */
+        }
+        
+        /* Efecto hover para enlaces de navegación */
+        .nav-link-modern:hover {
+            color: var(--secondary-pink) !important;  /* Color rosa secundario al hacer hover */
+        }
+        
+        /* Pie de página con diseño moderno y degradado */
+        .footer-modern {
+            background: linear-gradient(135deg, var(--primary-pink), var(--secondary-pink));  /* Degradado rosa */
+            padding: 3rem 0;  /* Espaciado vertical generoso */
+            margin-top: 5rem;  /* Margen superior para separación del contenido */
+            color: white;  /* Texto blanco para contraste */
+        }
+        
+        /* Clase para animaciones de entrada con fade y desplazamiento */
+        .fade-in {
+            opacity: 0;  /* Inicialmente invisible */
+            transform: translateY(30px);  /* Posición inicial desplazada hacia abajo */
+            transition: all 0.6s ease;  /* Transición suave para todas las propiedades */
+        }
+        
+        /* Estado visible para elementos con animación fade-in */
+        .fade-in.visible {
+            opacity: 1;  /* Completamente visible */
+            transform: translateY(0);  /* Posición final sin desplazamiento */
+        }
+        
+        /* Media queries para diseño responsivo en dispositivos móviles */
+        @media (max-width: 768px) {
+            /* Título del hero más pequeño en móviles */
+            .hero-title {
+                font-size: 2.5rem;  /* Tamaño de fuente reducido para móviles */
+            }
+            
+            /* Margen inferior reducido para tarjetas de producto en móviles */
+            .product-card-modern {
+                margin-bottom: 1.5rem;  /* Espaciado reducido entre tarjetas */
+            }
+            
+            /* Espaciado interno reducido para sección de filtros en móviles */
+            .filter-section {
+                padding: 1rem;  /* Padding reducido para mejor uso del espacio */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background: white !important; box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="imgs/logo.jpg" alt="Logo" class="rounded-circle me-2" style="width: 40px; height: 40px;">
+                <span style="color: var(--dark-pink); font-weight: 700;">Almas Store</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html" style="color: var(--text-dark) !important; font-weight: 500;">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto" style="color: var(--text-dark) !important; font-weight: 500;">Contacto</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" style="color: var(--dark-pink) !important; font-weight: 600; background: var(--light-pink); padding: 0.5rem 1rem; border-radius: 25px; margin-left: 0.5rem;">
+                            <i class="bi bi-house me-1"></i>Volver al Inicio
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="makeup-hero">
+        <div class="container text-center">
+            <h1 class="hero-title" data-aos="fade-up">Maquillaje Profesional</h1>
+            <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">
+                Descubre nuestra colección premium de productos de maquillaje para realzar tu belleza
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container-fluid py-5" style="margin-top: 2rem;">
+        <!-- Filter Section -->
+        <div class="container">
+            <div class="filter-section" data-aos="fade-up">
+                <div class="text-center mb-4">
+                    <h2 class="section-title">Nuestros Productos</h2>
+                    <input type="text" class="search-bar-modern" placeholder="Buscar productos..." id="searchInput">
+                </div>
+                <div class="text-center">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="ojos">Ojos</button>
+                    <button class="filter-btn" data-filter="labial">Labios</button>
+                    <button class="filter-btn" data-filter="rostro">Rostro</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="container">
+            <div class="row" id="productsContainer">
+                
+                <!-- Paleta de Sombras 73 Colores -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="ojos">
+                    <div class="product-card-modern" data-aos="fade-up">
+                        <div class="product-image-container">
+                            <img src="maquillaje/sombra5.jpg" alt="Paleta 73 colores" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal" 
+                                        data-images='["maquillaje/sombra5.jpg", "maquillaje/sombra5.1.jpg", "maquillaje/sombra5.2.jpg"]' 
+                                        data-title="Paleta de Sombras 73 Colores" 
+                                        data-brand="KEVIN&COCO" 
+                                        data-price="₡6.300">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                            <span class="product-badge">Popular</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Paleta de Sombras 73 Colores</h3>
+                            <p class="product-brand">KEVIN&COCO</p>
+                            <p class="product-price">₡6.300</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" style="background: var(--secondary-pink); border: none; margin-top: 0.5rem;" data-product-id="paleta-sombras-73" data-product-name="Paleta de sombras 73 colores" data-product-price="6300" data-product-image="maquillaje/sombra5.jpg">
+                                <i class="bi bi-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paleta de sombras 78 colores -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="ojos">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="100">
+                        <div class="product-image-container">
+                            <img src="maquillaje/sombra1.jpg" alt="Paleta de Sombras 78 colores" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal" 
+                                        data-images='["maquillaje/sombra1.jpg", "maquillaje/sombra1.1.jpg", "maquillaje/sombra1.2.jpg"]' 
+                                        data-title="Paleta de sombras 78 colores" 
+                                        data-brand="KEVIN&COCO" 
+                                        data-price="₡6.900">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Paleta de sombras 78 colores</h3>
+                            <p class="product-brand">KEVIN&COCO</p>
+                            <p class="product-price">₡6.900</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" style="background: var(--secondary-pink); border: none; margin-top: 0.5rem;" data-product-id="paleta-sombras-78" data-product-name="Paleta de sombras 78 colores" data-product-price="6900" data-product-image="maquillaje/sombra1.jpg">
+                                <i class="bi bi-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paleta de sombras 80 colores -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="ojos">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="200">
+                        <div class="product-image-container">
+                            <img src="maquillaje/sombra4.jpg" alt="Paleta de sombras 80 colores" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal" 
+                                        data-images='["maquillaje/sombra4.jpg", "maquillaje/sombra4.1.jpg", "maquillaje/sombra4.2.jpg"]' 
+                                        data-title="Paleta de sombras 80 colores" 
+                                        data-brand="KEVIN&COCO" 
+                                        data-price="₡7.200">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Paleta de sombras 80 colores</h3>
+                            <p class="product-brand">KEVIN&COCO</p>
+                            <p class="product-price">₡7.200</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" style="background: var(--secondary-pink); border: none; margin-top: 0.5rem;" data-product-id="paleta-sombras-80" data-product-name="Paleta de sombras 80 colores" data-product-price="7200" data-product-image="maquillaje/sombra4.jpg">
+                                <i class="bi bi-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paleta de sombras 25 colores -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="ojos">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="300">
+                        <div class="product-image-container">
+                            <img src="maquillaje/sombra3.jpg" alt="Paleta de sombras 25 colores" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal" 
+                                        data-images='["maquillaje/sombra3.jpg", "maquillaje/sombra3.1.jpg", "maquillaje/sombra3.2.jpg"]' 
+                                        data-title="Paleta de sombras 25 colores" 
+                                        data-brand="KEVIN&COCO" 
+                                        data-price="₡3.500">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Paleta de sombras 25 colores</h3>
+                            <p class="product-brand">KEVIN&COCO</p>
+                            <p class="product-price">₡3.500</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" style="background: var(--secondary-pink); border: none; margin-top: 0.5rem;" data-product-id="paleta-sombras-25" data-product-name="Paleta de sombras 25 colores" data-product-price="3500" data-product-image="maquillaje/sombra3.jpg">
+                                <i class="bi bi-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paleta de sombras 30 colores -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="ojos">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="300">
+                        <div class="product-image-container">
+                            <img src="maquillaje/sombra11.jpg" alt="Paleta de sombras 30 colores" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal" 
+                                        data-images='["maquillaje/sombra11.jpg", "maquillaje/sombra11.1.jpg"]' 
+                                        data-title="Paleta de sombras 30 colores" 
+                                        data-brand="KEVIN&COCO" 
+                                        data-price="₡3.900">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Paleta de sombras 30 colores</h3>
+                            <p class="product-brand">KEVIN&COCO</p>
+                            <p class="product-price">₡3.900</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" style="background: var(--secondary-pink); border: none; margin-top: 0.5rem;" data-product-id="paleta-sombras-30" data-product-name="Paleta de sombras 30 colores" data-product-price="3900" data-product-image="maquillaje/sombra11.jpg">
+                                <i class="bi bi-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paleta de sombras 15 colores -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="ojos">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="300">
+                        <div class="product-image-container">
+                            <img src="maquillaje/sombra9.jpg" alt="Paleta de sombras 15 colores" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal"
+                                        data-images='["maquillaje/sombra9.jpg", "maquillaje/sombra9.1.jpg", "maquillaje/sombra9.2.jpg"]'
+                                        data-title="Paleta de sombras 15 colores"
+                                        data-brand="KEVIN&COCO"
+                                        data-price="₡2.400">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Paleta de sombras 15 colores</h3>
+                            <p class="product-brand">KEVIN&COCO</p>
+                            <p class="product-price">₡2.400</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" style="background: var(--secondary-pink); border: none; margin-top: 0.5rem;" data-product-id="paleta-sombras-15-kevin-coco" data-product-name="Paleta de sombras 15 colores" data-product-price="2400" data-product-image="maquillaje/sombra9.jpg">
+                                <i class="bi bi-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paleta rubor e iluminador 9 colores -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="rostro">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="400">
+                        <div class="product-image-container">
+                            <img src="maquillaje/sombra2.jpg" alt="Paleta rubor e iluminador 9 colores" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal" 
+                                        data-images='["maquillaje/sombra2.jpg", "maquillaje/sombra2.1.jpg"]' 
+                                        data-title="Paleta rubor e iluminador 9 colores" 
+                                        data-brand="KEVIN&COCO" 
+                                        data-price="₡1.800">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Paleta rubor e iluminador 9 colores</h3>
+                            <p class="product-brand">KEVIN&COCO</p>
+                            <p class="product-price">₡1.800</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" style="background: var(--secondary-pink); border: none; margin-top: 0.5rem;" data-product-id="paleta-rubor-iluminador-9" data-product-name="Paleta rubor e iluminador 9 colores" data-product-price="1800" data-product-image="maquillaje/sombra2.jpg">
+                                <i class="bi bi-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paleta de sombras 15 colores -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="ojos">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="500">
+                        <div class="product-image-container">
+                            <img src="maquillaje/sombra6.webp" alt="Paleta de sombras 15 colores" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal"
+                                        data-images='["maquillaje/sombra6.webp", "maquillaje/sombra6.1.jpg", "maquillaje/sombra6.2.jpg"]'
+                                        data-title="Paleta de sombras 15 colores"
+                                        data-brand="KEVIN&COCO"
+                                        data-price="₡2.700">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Paleta de sombras 15 colores</h3>
+                            <p class="product-brand">KEVIN&COCO</p>
+                            <p class="product-price">₡2.700</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" style="background: var(--secondary-pink); border: none; margin-top: 0.5rem;" data-product-id="paleta-sombras-15-kevin-coco-2" data-product-name="Paleta de sombras 15 colores" data-product-price="2700" data-product-image="maquillaje/sombra6.webp">
+                                <i class="bi bi-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paleta de sombras 22 colores -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="ojos">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="600">
+                        <div class="product-image-container">
+                            <img src="maquillaje/sombra7.webp" alt="Paleta de sombras 22 colores" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal" 
+                                        data-images='["maquillaje/sombra7.webp", "maquillaje/sombra7.1.jpg", "maquillaje/sombra7.2.jpg"]' 
+                                        data-title="Paleta de sombras 22 colores" 
+                                        data-brand="KEVIN&COCO" 
+                                        data-price="₡2.950">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Paleta de sombras 22 colores</h3>
+                            <p class="product-brand">KEVIN&COCO</p>
+                            <p class="product-price">₡2.950</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" style="background: var(--secondary-pink); border: none; margin-top: 0.5rem;" data-product-id="paleta-sombras-22" data-product-name="Paleta de sombras 22 colores" data-product-price="2950" data-product-image="maquillaje/sombra7.webp">
+                                <i class="bi bi-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paleta de sombras 18 colores -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="ojos">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="1100">
+                        <div class="product-image-container">
+                            <img src="maquillaje/sombra12.jpg" alt="Paleta de sombras 18 colores" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal" 
+                                        data-images='["maquillaje/sombra12.jpg", "maquillaje/sombra12.1.jpg", "maquillaje/sombra12.2.jpg"]'
+                                        data-title="Paleta de sombras 18 colores" 
+                                        data-brand="KEVIN&COCO" 
+                                        data-price="₡2.600">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Paleta de sombras 18 colores</h3>
+                            <p class="product-brand">KEVIN&COCO</p>
+                            <p class="product-price">₡2.600</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" style="background: var(--secondary-pink); border: none; margin-top: 0.5rem;" data-product-id="paleta-sombras-18" data-product-name="Paleta de sombras 18 colores" data-product-price="2600" data-product-image="maquillaje/sombra12.jpg">
+                                <i class="bi bi-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Velvelty-Plush Primer -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="rostro">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="1200">
+                        <div class="product-image-container">
+                            <img src="maquillaje/primer.jpg" alt="Velvelty-Plush Primer" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal" 
+                                        data-images='["maquillaje/primer.jpg", "maquillaje/primer1.jpg", "maquillaje/primer1.1.jpg"]' 
+                                        data-title="Velvelty-Plush Primer" 
+                                        data-brand="KEVIN&COCO" 
+                                        data-price="₡2.000">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Velvelty-Plush Primer</h3>
+                            <p class="product-brand">KEVIN&COCO</p>
+                            <p class="product-price">₡2.000</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" style="background: var(--secondary-pink); border: none; margin-top: 0.5rem;" data-product-id="velvelty-plush-primer" data-product-name="Velvelty-Plush Primer" data-product-price="2000" data-product-image="maquillaje/primer.jpg">
+                                <i class="bi bi-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bases de maquillaje HUDAMOJI -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="rostro">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="1300">
+                        <div class="product-image-container">
+                            <img src="maquillaje/bases.jpg" alt="Bases de maquillaje" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal" 
+                                        data-images='["maquillaje/bases.jpg", "maquillaje/bases1.jpg"]' 
+                                        data-title="Bases de maquillaje" 
+                                        data-brand="HUDAMOJI" 
+                                        data-price="₡2.400">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Bases de maquillaje</h3>
+                            <p class="product-brand">HUDAMOJI</p>
+                            <p class="product-price">₡2.400</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" style="background: var(--secondary-pink); border: none; margin-top: 0.5rem;" data-product-id="bases-maquillaje-hudamoji" data-product-name="Bases de maquillaje" data-product-price="2400" data-product-image="maquillaje/bases.jpg">
+                                <i class="bi bi-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bases de maquillaje KEVIN&COCO -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="rostro">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="1400">
+                        <div class="product-image-container">
+                            <img src="maquillaje/basek.jpg" alt="Bases de maquillaje" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal" 
+                                        data-images='["maquillaje/basek.jpg", "maquillaje/basek1.jpg", "maquillaje/basek2.jpg"]' 
+                                        data-title="Bases de maquillaje" 
+                                        data-brand="KEVIN&COCO" 
+                                        data-price="₡2.400">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Bases de maquillaje</h3>
+                            <p class="product-brand">KEVIN&COCO</p>
+                            <p class="product-price">₡2.400</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" style="background: var(--secondary-pink); border: none; margin-top: 0.5rem;" data-product-id="bases-maquillaje-kevin-coco" data-product-name="Bases de maquillaje" data-product-price="2400" data-product-image="maquillaje/basek.jpg">
+                                <i class="bi bi-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Corrector -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="rostro">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="1500">
+                        <div class="product-image-container">
+                            <img src="maquillaje/correctork.jpg" alt="Corrector Liquido" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal" 
+                                        data-images='["maquillaje/correctork.jpg", "maquillaje/correctork1.jpg"]' 
+                                        data-title="Corrector Liquido" 
+                                        data-brand="KEVIN&COCO" 
+                                        data-price="₡1.400">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Corrector Liquido</h3>
+                            <p class="product-brand">KEVIN&COCO</p>
+                            <p class="product-price">₡1.400</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" style="background: var(--secondary-pink); border: none; margin-top: 0.5rem;" data-product-id="corrector-liquido-kevin-coco" data-product-name="Corrector Liquido" data-product-price="1400" data-product-image="maquillaje/correctork.jpg">
+                                <i class="bi bi-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Corrector -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="rostro">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="1500">
+                        <div class="product-image-container">
+                            <img src="maquillaje/corrector.jpg" alt="Corrector" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal" 
+                                        data-images='["maquillaje/corrector.jpg", "maquillaje/corrector1.jpg", "maquillaje/corrector1.1.jpg"]' 
+                                        data-title="Corrector" 
+                                        data-brand="YH BEJA" 
+                                        data-price="₡1.400">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Corrector</h3>
+                            <p class="product-brand">YH BEJA</p>
+                            <p class="product-price">₡1.400</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" style="background: var(--secondary-pink); border: none; margin-top: 0.5rem;" data-product-id="corrector-yh-beja" data-product-name="Corrector" data-product-price="1400" data-product-image="maquillaje/corrector.jpg">
+                                <i class="bi bi-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paleta de correctores -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="rostro">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="2700">
+                        <div class="product-image-container">
+                            <img src="maquillaje/paletacorrectores.jpg" alt="Paleta de correctores" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal"
+                                        data-images='["maquillaje/paletacorrectores.jpg", "maquillaje/paletacorrectores1.jpg", "maquillaje/paletacorrectores2.jpg"]'
+                                        data-title="Paleta de Correctores"
+                                        data-brand="KEVIN&COCO"
+                                        data-price="₡3.300">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Paleta de Correctores</h3>
+                            <p class="product-brand">KEVIN&COCO</p>
+                            <p class="product-price">₡3.300</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" style="background: var(--secondary-pink); border: none; margin-top: 0.5rem;" data-product-id="paleta-correctores-kevin-coco" data-product-name="Paleta de Correctores" data-product-price="3300" data-product-image="maquillaje/paletacorrectores.jpg">
+                                <i class="bi bi-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Polvo Compacto  -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="rostro">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="2600">
+                        <div class="product-image-container">
+                            <img src="maquillaje/polvos.jpg" alt="Polvo Compacto" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal"
+                                        data-images='["maquillaje/polvos.jpg", "maquillaje/polvos1.jpg"]'
+                                        data-title="Polvo Compacto"
+                                        data-brand="KEVIN&COCO"
+                                        data-price="₡1.500">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Polvo Compacto</h3>
+                            <p class="product-brand">KEVIN&COCO</p>
+                            <p class="product-price">₡1.500</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" style="background: var(--secondary-pink); border: none; margin-top: 0.5rem;" data-product-id="polvo-compacto-kevin-coco" data-product-name="Polvo Compacto" data-product-price="1500" data-product-image="maquillaje/polvos.jpg">
+                                <i class="bi bi-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Rubor y Labial de Conejo -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="rostro">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="2700">
+                        <div class="product-image-container">
+                            <img src="maquillaje/conejo.jpg" alt="Rubor y Labial de Conejo" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal"
+                                        data-images='["maquillaje/conejo.jpg", "maquillaje/conejo1.jpg", "maquillaje/conejo2.jpg", "maquillaje/conejo3.jpg", "maquillaje/conejo4.jpg"]'
+                                        data-title="Rubor y Labial de Conejo"
+                                        data-brand="KEVIN&COCO"
+                                        data-price="₡2.500">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Rubor y Labial de Conejo</h3>
+                            <p class="product-brand">KEVIN&COCO</p>
+                            <p class="product-price">₡2.500</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" style="background: var(--secondary-pink); border: none; margin-top: 0.5rem;" data-product-id="rubor-labial-conejo-kevin-coco" data-product-name="Rubor y Labial de Conejo" data-product-price="2500" data-product-image="maquillaje/conejo.jpg">
+                                <i class="bi bi-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Set Labial Delineador y Labial -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="labial">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="1700">
+                        <div class="product-image-container">
+                            <img src="maquillaje/setlabios.jpg" alt="Set Labial Delineador y Labial" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal"
+                                        data-images='["maquillaje/setlabios.jpg", "maquillaje/setlabios1.jpg"]'
+                                        data-title="Set Labial Delineador y Labial"
+                                        data-brand="KEVIN&COCO"
+                                        data-price="₡1.400">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Set Labial Delineador y Labial</h3>
+                            <p class="product-brand">KEVIN&COCO</p>
+                            <p class="product-price">₡1.400</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" style="background: var(--secondary-pink); border: none; margin-top: 0.5rem;" data-product-id="set-labial-delineador-labial-kevin-coco" data-product-name="Set Labial Delineador y Labial" data-product-price="1400" data-product-image="maquillaje/setlabios.jpg">
+                                <i class="bi bi-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Labial Matte Be mine -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="labial">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="1800">
+                        <div class="product-image-container">
+                            <img src="maquillaje/labiales2.jpg" alt="Labial Matte Be mine" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal"
+                                        data-images='["maquillaje/labiales2.jpg", "maquillaje/labiales2.1.jpg", "maquillaje/labiales2.2.jpg", "maquillaje/labiales2.3.jpg"]'
+                                        data-title="Labial Matte Be mine"
+                                        data-brand="KEVIN&COCO"
+                                        data-price="₡1.500">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Labial Matte Be mine</h3>
+                            <p class="product-brand">KEVIN&COCO</p>
+                            <p class="product-price">₡1.500</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" style="background: var(--secondary-pink); border: none; margin-top: 0.5rem;" data-product-id="labial-matte-be-mine-kevin-coco" data-product-name="Labial Matte Be mine" data-product-price="1500" data-product-image="maquillaje/labiales2.jpg">
+                                <i class="bi bi-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Delineadores Líquido -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="ojos">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="1900">
+                        <div class="product-image-container">
+                            <img src="maquillaje/delineadores.jpg" alt="Delineadores Líquido" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal"
+                                        data-images='["maquillaje/delineadores.jpg"]'
+                                        data-title="Delineadores Líquido"
+                                        data-brand="USHAS - SAS - KARITE - KISS BEAUTY"
+                                        data-price="₡500 - ₡2.200">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Delineadores Líquido</h3>
+                            <p class="product-brand">USHAS - SAS - KARITE - KISS BEAUTY</p>
+                            <p class="product-price">₡500 - ₡2.200</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" style="background: var(--secondary-pink); border: none; margin-top: 0.5rem;" data-product-id="delineadores-liquido" data-product-name="Delineadores Líquido" data-product-price="500" data-product-image="maquillaje/delineadores.jpg">
+                                <i class="bi bi-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Encrespadores -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="ojos">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="2000">
+                        <div class="product-image-container">
+                            <img src="maquillaje/encrespadores.jpg" alt="Encrespadores" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal"
+                                        data-images='["maquillaje/encrespadores.jpg"]'
+                                        data-title="Encrespadores"
+                                        data-brand="USHAS - SAS - KARITE - KISS BEAUTY - YH BEJA"
+                                        data-price="₡900 - ₡1.800">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Encrespadores</h3>
+                            <p class="product-brand">USHAS - SAS - KARITE - KISS BEAUTY - YH BEJA</p>
+                            <p class="product-price">₡900 - ₡1.800</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" style="background: var(--secondary-pink); border: none; margin-top: 0.5rem;" data-product-id="encrespadores" data-product-name="Encrespadores" data-product-price="900" data-product-image="maquillaje/encrespadores.jpg">
+                                <i class="bi bi-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Iluminador en polvo 6 colores -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="rostro">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="2200">
+                        <div class="product-image-container">
+                            <img src="maquillaje/iluminador2.jpg" alt="Iluminador en polvo 6 colores" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal"
+                                        data-images='["maquillaje/iluminador2.jpg", "maquillaje/iluminador2.1.jpg"]'
+                                        data-title="Iluminador en polvo 6 colores"
+                                        data-brand="KEVIN&COCO"
+                                        data-price="₡2.000">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Iluminador en polvo 6 colores</h3>
+                            <p class="product-brand">KEVIN&COCO</p>
+                            <p class="product-price">₡2.000</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" style="background: var(--secondary-pink); border: none; margin-top: 0.5rem;" data-product-id="iluminador-polvo-6-colores-kevin-coco-1" data-product-name="Iluminador en polvo 6 colores" data-product-price="2000" data-product-image="maquillaje/iluminador2.jpg">
+                                <i class="bi bi-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Iluminador en polvo 6 colores -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="rostro">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="2300">
+                        <div class="product-image-container">
+                            <img src="maquillaje/iluminador3.jpg" alt="Iluminador en polvo 6 colores" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal"
+                                        data-images='["maquillaje/iluminador3.jpg", "maquillaje/iluminador3.1.jpg"]'
+                                        data-title="Iluminador en polvo 6 colores"
+                                        data-brand="KEVIN&COCO"
+                                        data-price="₡3.000">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Iluminador en polvo 6 colores</h3>
+                            <p class="product-brand">KEVIN&COCO</p>
+                            <p class="product-price">₡3.000</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" style="background: var(--secondary-pink); border: none; margin-top: 0.5rem;" data-product-id="iluminador-polvo-6-colores-kevin-coco-2" data-product-name="Iluminador en polvo 6 colores" data-product-price="3000" data-product-image="maquillaje/iluminador3.jpg">
+                                <i class="bi bi-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Iluminador en polvo -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="rostro">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="2400">
+                        <div class="product-image-container">
+                            <img src="maquillaje/iluminador4.jpg" alt="Iluminador en polvo" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal" 
+                                        data-images='["maquillaje/iluminador4.jpg", "maquillaje/iluminador4.1.jpg"]' 
+                                        data-title="Iluminador en polvo" 
+                                        data-brand="HUDAMOJI" 
+                                        data-price="₡1.000">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Iluminador en polvo</h3>
+                            <p class="product-brand">HUDAMOJI</p>
+                            <p class="product-price">₡1.000</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" style="background: var(--secondary-pink); border: none; margin-top: 0.5rem;" data-product-id="iluminador-polvo-hudamoji" data-product-name="Iluminador en polvo" data-product-price="1000" data-product-image="maquillaje/iluminador4.jpg">
+                                <i class="bi bi-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rubor en polvo  -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="rostro">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="2600">
+                        <div class="product-image-container">
+                            <img src="maquillaje/rubor1.jpg" alt="Rubor en polvo" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal" 
+                                        data-images='["maquillaje/rubor1.jpg", "maquillaje/rubor2.jpg", "maquillaje/rubor3.jpg", "maquillaje/rubor4.jpg"]' 
+                                        data-title="Rubor en polvo" 
+                                        data-brand="DODO GIRL" 
+                                        data-price="₡1.000">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Rubor en polvo</h3>
+                            <p class="product-brand">DODO GIRL</p>
+                            <p class="product-price">₡1.200</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" style="background: var(--secondary-pink); border: none; margin-top: 0.5rem;" data-product-id="rubor-polvo-dodo-girl" data-product-name="Rubor en polvo" data-product-price="1200" data-product-image="maquillaje/rubor1.jpg">
+                                <i class="bi bi-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contorno en crema  -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="rostro">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="2600">
+                        <div class="product-image-container">
+                            <img src="maquillaje/contorno.jpg" alt="Contorno en crema" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal"
+                                        data-images='["maquillaje/contorno.jpg", "maquillaje/contorno1.jpg", "maquillaje/contorno2.jpg"]'
+                                        data-title="Contorno en Crema"
+                                        data-brand="HUDAMOJI"
+                                        data-price="₡1.200">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Contorno en Crema</h3>
+                            <p class="product-brand">HUDAMOJI</p>
+                            <p class="product-price">₡1.200</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" style="background: var(--secondary-pink); border: none; margin-top: 0.5rem;" data-product-id="contorno-crema-hudamoji" data-product-name="Contorno en Crema" data-product-price="1200" data-product-image="maquillaje/contorno.jpg">
+                                <i class="bi bi-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-modern" id="contacto">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5 class="text-white mb-3">Almas Store</h5>
+                    <p class="text-light">Tu tienda de confianza para productos de belleza y maquillaje profesional.</p>
+                    <div class="social-links mt-3">
+                        <a href="https://www.facebook.com/Almas.StoreCR/" target="_blank" class="text-white me-3"><i class="bi bi-facebook fs-4"></i></a>
+                        <a href="https://www.tiktok.com/@almas.store.cr" target="_blank" class="text-white me-3"><i class="bi bi-tiktok fs-4"></i></a>
+                        <a href="https://instagram.com/almas_storecr" target="_blank" class="text-white"><i class="bi bi-instagram fs-4"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5 style="color: white; font-weight: 600;">Contacto</h5>
+                    <p style="color: rgba(255,255,255,0.8); margin: 0;">
+                        <i class="bi bi-whatsapp me-2"></i>
+                        <a href="https://wa.me/50671073953" style="color: rgba(255,255,255,0.8); text-decoration: none;">+506 7107-3953</a>
+                    </p>
+                    <p style="color: rgba(255,255,255,0.8); margin: 0;">
+                        <i class="bi bi-envelope me-2"></i>
+                        <a href="mailto:almasstorecr@gmail.com" style="color: rgba(255,255,255,0.8); text-decoration: none;">almasstorecr@gmail.com</a>
+                    </p>
+                    <p style="color: rgba(255,255,255,0.8); margin: 0;">
+                        <i class="bi bi-geo-alt me-2"></i>
+                        San Roque de Barva, Heredia
+                    </p>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5 class="text-white mb-3">Enlaces Rápidos</h5>
+                    <a href="index.html" class="d-block text-light mb-2 text-decoration-none">Inicio</a>
+                    <a href="catalogoskincare.html" class="d-block text-light mb-2 text-decoration-none">Skincare</a>
+                    <a href="catalogopersonal.html" class="d-block text-light mb-2 text-decoration-none">Cuidado Personal</a>
+                </div>
+            </div>
+            <hr class="my-4 bg-light">
+            <div class="text-center">
+                <p class="text-light mb-0">&copy; 2025 Almas Store. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Product Modal - Enhanced with larger preview -->
+    <div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content modal-content-modern">
+                <div class="modal-header modal-header-modern">
+                    <h5 class="modal-title text-white" id="modalProductTitle">Producto</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body modal-body-modern p-0">
+                    <div class="row g-0">
+                        <div class="col-lg-8">
+                            <div id="modalCarousel" class="carousel slide h-100" data-bs-ride="carousel">
+                                <div class="carousel-inner h-100" id="modalCarouselInner">
+                                    <!-- Images will be inserted here by JavaScript -->
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#modalCarousel" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Anterior</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#modalCarousel" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Siguiente</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="p-4 h-100 d-flex flex-column">
+                                <h4 id="modalProductName" class="text-dark mb-3"></h4>
+                                <p id="modalProductBrand" class="text-muted mb-2"></p>
+                                <h3 id="modalProductPrice" class="text-primary mb-4"></h3>
+                                <div class="mt-auto">
+                                    <a href="https://wa.me/50671073953" class="btn btn-primary w-100 mb-2" style="background: var(--secondary-pink); border: none;">
+                                        <i class="bi bi-whatsapp me-2"></i>Consultar por WhatsApp
+                                    </a>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Cart JS -->
+    <script src="cart.js"></script>
+    
+    <script>
+        // Inicializar AOS (Animate On Scroll) para animaciones al hacer scroll
+        AOS.init({
+            duration: 800,           // Duración de la animación en milisegundos
+            easing: 'ease-in-out',   // Función de easing para la animación
+            once: true               // Animación solo se ejecuta una vez por elemento
+        });
+
+        // Funcionalidad de filtrado y búsqueda
+        document.addEventListener('DOMContentLoaded', function() {
+            const botonesFiltro = document.querySelectorAll('.filter-btn');      // Botones de filtro por categoría
+            const itemsProducto = document.querySelectorAll('.product-item');     // Todos los elementos de productos
+            const entradaBusqueda = document.getElementById('searchInput');          // Campo de búsqueda
+
+            // Filtrado por categoría
+            botonesFiltro.forEach(boton => {
+                boton.addEventListener('click', function() {
+                    const filtro = this.getAttribute('data-filter');  // Obtener categoría del filtro
+                    
+                    // Actualizar botón activo
+                    botonesFiltro.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+
+                    // Filtrar productos según categoría
+                    itemsProducto.forEach(item => {
+                        const categoria = item.getAttribute('data-category');
+                        
+                        if (filtro === 'all' || filtro === categoria) {
+                            // Mostrar productos de la categoría seleccionada
+                            item.style.display = 'block';
+                            setTimeout(() => {
+                                item.style.opacity = '1';
+                                item.style.transform = 'translateY(0)';
+                            }, 50);
+                        } else {
+                            // Ocultar productos de otras categorías con animación
+                            item.style.opacity = '0';
+                            item.style.transform = 'translateY(20px)';
+                            setTimeout(() => {
+                                item.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+
+            // Funcionalidad de búsqueda en tiempo real
+            entradaBusqueda.addEventListener('input', function() {
+                const terminoBusqueda = this.value.toLowerCase();  // Término de búsqueda en minúsculas
+                
+                itemsProducto.forEach(item => {
+                    const titulo = item.querySelector('.product-title').textContent.toLowerCase();
+                    const marca = item.querySelector('.product-brand').textContent.toLowerCase();
+                    
+                    // Mostrar productos que coincidan con la búsqueda
+                    if (titulo.includes(terminoBusqueda) || marca.includes(terminoBusqueda)) {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0)';
+                        }, 50);
+                    } else {
+                        // Ocultar productos que no coincidan
+                        item.style.opacity = '0';
+                        item.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+
+            // Funcionalidad del modal de vista rápida
+            const modalProducto = document.getElementById('productModal');
+            modalProducto.addEventListener('show.bs.modal', function(event) {
+                const boton = event.relatedTarget;  // Botón que activó el modal
+                const imagenes = JSON.parse(boton.getAttribute('data-images'));  // Array de imágenes
+                const titulo = boton.getAttribute('data-title');                // Título del producto
+                const marca = boton.getAttribute('data-brand');                // Marca del producto
+                const precio = boton.getAttribute('data-price');                // Precio del producto
+
+                // Actualizar contenido del modal
+                document.getElementById('modalProductTitle').textContent = titulo;
+                document.getElementById('modalProductName').textContent = titulo;
+                document.getElementById('modalProductBrand').textContent = marca;
+                document.getElementById('modalProductPrice').textContent = precio;
+
+                // Actualizar carrusel de imágenes
+                const carruselInterno = document.getElementById('modalCarouselInner');
+                carruselInterno.innerHTML = '';  // Limpiar carrusel existente
+
+                // Crear elementos del carrusel para cada imagen
+                imagenes.forEach((imagen, indice) => {
+                    const itemCarrusel = document.createElement('div');
+                    itemCarrusel.className = `carousel-item ${indice === 0 ? 'active' : ''}`;
+                    itemCarrusel.innerHTML = `
+                        <img src="${imagen}" class="d-block w-100 modal-product-image" alt="${titulo}">
+                    `;
+                    carruselInterno.appendChild(itemCarrusel);
+                });
+            });
+
+            // Animaciones de scroll para elementos con clase fade-in
+            const opcionesObservador = {
+                threshold: 0.1,           // Porcentaje de visibilidad requerido
+                rootMargin: '0px 0px -50px 0px'  // Margen adicional
+            };
+
+            const observador = new IntersectionObserver((entradas) => {
+                entradas.forEach(entrada => {
+                    if (entrada.isIntersecting) {
+                        entrada.target.classList.add('visible');  // Hacer visible cuando está en viewport
+                    }
+                });
+            }, opcionesObservador);
+
+            // Observar todos los elementos con clase fade-in
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observador.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>

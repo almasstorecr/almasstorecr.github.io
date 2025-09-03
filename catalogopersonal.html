@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuidado Personal - Almas Store | Productos de Belleza</title>
+    <title>almasstorecr.github.io</title>
+    
+    <!-- Fuentes de Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Iconos de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <!-- Animación AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Estilos Adicionales para Cuidado Personal -->
+    <style>
+        :root {
+            --primary-pink: #FFB6C1;
+            --secondary-pink: #FF69B4;
+            --light-pink: #FFE4E1;
+            --dark-pink: #FF1493;
+            --rose-gold: #B76E79;
+            --soft-white: #FFF5F5;
+            --text-dark: #2C2C2C;
+            --text-light: #666666;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--soft-white) 0%, #FFFFFF 100%);
+            color: var(--text-dark);
+        }
+        
+        .personal-hero {
+            background: linear-gradient(135deg, var(--primary-pink) 0%, var(--secondary-pink) 100%);
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .personal-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1.5" fill="rgba(255,255,255,0.1)"/></svg>');
+            animation: float 20s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 2rem;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--dark-pink);
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-pink), var(--secondary-pink));
+            border-radius: 2px;
+        }
+        
+        .product-card-modern {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(255, 182, 193, 0.2);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        
+        .product-card-modern:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(255, 182, 193, 0.3);
+        }
+        
+        .product-image-container {
+            position: relative;
+            overflow: hidden;
+            height: 300px;
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        
+        .product-card-modern:hover .product-image {
+            transform: scale(1.1);
+        }
+        
+        .product-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 182, 193, 0.8), rgba(255, 105, 180, 0.8));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .product-card-modern:hover .product-overlay {
+            opacity: 1;
+        }
+        
+        .quick-view-btn {
+            background: white;
+            color: var(--dark-pink);
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .quick-view-btn:hover {
+            background: var(--dark-pink);
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+        }
+        
+        .product-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-brand {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary-pink);
+            margin-bottom: 1rem;
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--secondary-pink);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .filter-section {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(255, 182, 193, 0.1);
+        }
+        
+        .filter-btn {
+            background: transparent;
+            border: 2px solid var(--primary-pink);
+            color: var(--primary-pink);
+            padding: 8px 20px;
+            border-radius: 25px;
+            margin: 0 5px 10px 0;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--primary-pink);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .search-bar-modern {
+            border: 2px solid var(--primary-pink);
+            border-radius: 25px;
+            padding: 12px 20px;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .search-bar-modern:focus {
+            outline: none;
+            border-color: var(--secondary-pink);
+            box-shadow: 0 0 0 3px rgba(255, 182, 193, 0.2);
+        }
+        
+        .modal-content-modern {
+            border-radius: 20px;
+            border: none;
+            overflow: hidden;
+        }
+
+        .modal-header-modern {
+            background: linear-gradient(135deg, var(--primary-pink), var(--secondary-pink));
+            color: white;
+            border: none;
+        }
+
+        .modal-body-modern {
+            padding: 0;
+        }
+
+        .modal-image-container {
+            position: relative;
+            width: 100%;
+            height: 600px; /* Altura aumentada para vista previa más grande */
+            overflow: hidden;
+            background-color: var(--soft-white); /* Color de fondo añadido */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-product-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Cambiado a contain para mejor preservación de imagen */
+            transition: transform 0.3s ease;
+        }
+
+        .modal-product-image:hover {
+            transform: scale(1.05); /* Efecto de zoom al pasar el cursor */
+        }
+
+        .carousel-item {
+            height: 100%;
+        }
+
+        .carousel-inner {
+            height: 100%;
+        }
+        
+        .carousel-indicators-modern {
+            bottom: 20px;
+        }
+        
+        .carousel-indicators-modern button {
+            background-color: var(--primary-pink);
+            border-radius: 50%;
+            width: 12px;
+            height: 12px;
+            margin: 0 5px;
+        }
+        
+        .navbar-modern {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(255, 182, 193, 0.1);
+        }
+        
+        .navbar-brand-modern {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--dark-pink) !important;
+        }
+        
+        .nav-link-modern {
+            color: var(--text-dark) !important;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link-modern:hover {
+            color: var(--secondary-pink) !important;
+        }
+        
+        .footer-modern {
+            background: linear-gradient(135deg, var(--primary-pink), var(--secondary-pink));
+            padding: 3rem 0;
+            margin-top: 5rem;
+            color: white;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .product-card-modern {
+                margin-bottom: 1.5rem;
+            }
+            
+            .filter-section {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background: white !important; box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="imgs/logo.jpg" alt="Logo" class="rounded-circle me-2" style="width: 40px; height: 40px;">
+                <span style="color: var(--dark-pink); font-weight: 700;">Almas Store</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html" style="color: var(--text-dark) !important; font-weight: 500;">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#productos" style="color: var(--text-dark) !important; font-weight: 500;">Productos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto" style="color: var(--text-dark) !important; font-weight: 500;">Contacto</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" style="color: var(--dark-pink) !important; font-weight: 600; background: var(--light-pink); padding: 0.5rem 1rem; border-radius: 25px; margin-left: 0.5rem;">
+                            <i class="bi bi-house me-1"></i>Volver al Inicio
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección Hero -->
+    <section class="personal-hero">
+        <div class="container text-center">
+            <h1 class="hero-title" data-aos="fade-up">Cuidado Personal</h1>
+            <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">
+                Descubre nuestra exclusiva colección de productos para tu cuidado y belleza personal
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container-fluid py-5" style="margin-top: 2rem;">
+        <!-- Sección de Filtros -->
+        <div class="container">
+            <div class="filter-section" data-aos="fade-up">
+                <div class="text-center mb-4">
+                    <h2 class="section-title">Nuestros Productos</h2>
+                    <input type="text" class="search-bar-modern" placeholder="Buscar productos..." id="searchInput">
+                </div>
+                <div class="text-center">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="perfumes">Perfumes</button>
+                    <button class="filter-btn" data-filter="colonias">Colonias</button>
+                    <button class="filter-btn" data-filter="bodysplash">Body Splash</button>
+                    <button class="filter-btn" data-filter="crema">Cremas</button>
+                    <button class="filter-btn" data-filter="exfoliante">Exfoliante</button>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Cuadrícula de Productos -->
+        <div class="container">
+            <div class="row" id="productsContainer">
+
+                <!-- Exfoliantes -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="exfoliante">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="800">
+                        <div class="product-image-container">
+                            <img src="personal/exfoliante1.jpg" alt="Exfoliante Corporal" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal" 
+                                        data-images='["personal/exfoliante1.jpg", "personal/exfoliante2.jpg", "personal/exfoliante3.jpg", "personal/exfoliante4.jpg"]' 
+                                        data-title="Exfoliante Corporal" 
+                                        data-brand="MONET GARDEN" 
+                                        data-price="₡3.000">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Exfoliante Corporal</h3>
+                            <p class="product-brand">MONET GARDEN</p>
+                            <p class="product-price">₡3.000</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" style="background: var(--secondary-pink); border: none; margin-top: 0.5rem;" data-product-id="exfoliante-1" data-product-name="Exfoliante Corporal" data-product-price="3000" data-product-image="personal/exfoliante1.jpg">
+                                <i class="bi bi-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Crema Anti estrias -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="crema">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="800">
+                        <div class="product-image-container">
+                            <img src="personal/estrias.jpg" alt="Crema Anti-Estrias" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal" 
+                                        data-images='["personal/estrias.jpg"]' 
+                                        data-title="Crema Anti-Estrias" 
+                                        data-brand="KISS BEAUTY" 
+                                        data-price="₡1.600">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Crema Anti-Estrias</h3>
+                            <p class="product-brand">KISS BEAUTY</p>
+                            <p class="product-price">₡1.600</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" style="background: var(--secondary-pink); border: none; margin-top: 0.5rem;" data-product-id="crema-1" data-product-name="Crema Anti-Estrias" data-product-price="1600" data-product-image="personal/estrias.jpg">
+                                <i class="bi bi-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Crema Aclaradora -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="crema">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="800">
+                        <div class="product-image-container">
+                            <img src="personal/aclaradora.jpg" alt="Crema Corporal" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal" 
+                                        data-images='["personal/aclaradora.jpg", "personal/aclaradora1.jpg", "personal/aclaradora2.jpg"]' 
+                                        data-title="Crema aclaradora zona intima" 
+                                        data-brand="DR.RASHEL" 
+                                        data-price="₡2.500">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Crema Aclaradora Zona Intima</h3>
+                            <p class="product-brand">DR.RASHEL</p>
+                            <p class="product-price">₡2.500</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" style="background: var(--secondary-pink); border: none; margin-top: 0.5rem;" data-product-id="crema-2" data-product-name="Crema Aclaradora Zona Intima" data-product-price="2500" data-product-image="personal/aclaradora.jpg">
+                                <i class="bi bi-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                  <!-- Crema Miilena -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="crema">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="800">
+                        <div class="product-image-container">
+                            <img src="personal/miilena.jpg" alt="Crema Corporal" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal" 
+                                        data-images='["personal/miilena.jpg", "personal/miilena1.jpg", "personal/miilena2.jpg"]' 
+                                        data-title="Crema Corporal Miilena 1L" 
+                                        data-brand="Miilena" 
+                                        data-price="₡3.900">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Crema Corporal Miilena 1L</h3>
+                            <p class="product-brand">Miilena</p>
+                            <p class="product-price">₡3.900</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" style="background: var(--secondary-pink); border: none; margin-top: 0.5rem;" data-product-id="crema-3" data-product-name="Crema Corporal Miilena 1L" data-product-price="3900" data-product-image="personal/miilena.jpg">
+                                <i class="bi bi-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Body Splash Variado -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="bodysplash">
+                    <div class="product-card-modern" data-aos="fade-up">
+                        <div class="product-image-container">
+                            <img src="personal/splash.jpg" alt="Body Splash Variado" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal" 
+                                        data-images='["personal/splash.jpg", "personal/splash1.jpg", "personal/splash2.jpg"]' 
+                                        data-title="Body Splash Variado" 
+                                        data-brand="ARIANA GRANDE - BATH & BODY WORKS" 
+                                        data-price="₡9.000">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                            <span class="product-badge">Popular</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Body Splash Variado</h3>
+                            <p class="product-brand">ARIANA GRANDE - BATH & BODY WORKS</p>
+                            <p class="product-price">₡9.000</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" style="background: var(--secondary-pink); border: none; margin-top: 0.5rem;" data-product-id="bodysplash-1" data-product-name="Body Splash Variado" data-product-price="9000" data-product-image="personal/splash.jpg">
+                                <i class="bi bi-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Body Victoria's Secret -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="bodysplash">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="100">
+                        <div class="product-image-container">
+                            <img src="personal/Victorias.jpg" alt="Body Victoria's Secret" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal" 
+                                        data-images='["personal/Victorias.jpg", "personal/victoria1.jpg"]' 
+                                        data-title="Body Victoria's Secret" 
+                                        data-brand="VICTORIA'S SECRET" 
+                                        data-price="₡10.000">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                            <span class="product-badge">Premium</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Body Victoria's Secret</h3>
+                            <p class="product-brand">VICTORIA'S SECRET</p>
+                            <p class="product-price">₡10.000</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" style="background: var(--secondary-pink); border: none; margin-top: 0.5rem;" data-product-id="bodysplash-2" data-product-name="Body Victoria's Secret" data-product-price="10000" data-product-image="personal/Victorias.jpg">
+                                <i class="bi bi-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <!-- Perfume Vainilla -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="perfumes">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="300">
+                        <div class="product-image-container">
+                            <img src="personal/max.jpg" alt="Perfume Max Vainilla" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal" 
+                                        data-images='["personal/max.jpg", "personal/max1.jpg"]' 
+                                        data-title="Perfume de Dama Max Vainilla" 
+                                        data-brand="IMITACION DEL MOD VAINILLA BY ARIANA GRANDE" 
+                                        data-price="₡4.000">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Perfume de Dama Max Vainilla</h3>
+                            <p class="product-brand">IMITACION DEL MOD VAINILLA BY ARIANA GRANDE</p>
+                            <p class="product-brand">LOVALI</p>
+                            <p class="product-price">₡4.000</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" style="background: var(--secondary-pink); border: none; margin-top: 0.5rem;" data-product-id="perfume-1" data-product-name="Perfume de Dama Max Vainilla" data-product-price="4000" data-product-image="personal/max.jpg">
+                                <i class="bi bi-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                  <!-- Perfume Blush -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="perfumes">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="300">
+                        <div class="product-image-container">
+                            <img src="personal/blush.jpg" alt="Perfume Max Blush" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal" 
+                                        data-images='["personal/blush.jpg", "personal/blush1.jpg"]' 
+                                        data-title="Perfume de Dama Max Blush" 
+                                        data-brand="IMITACION DEL MOD Blush BY ARIANA GRANDE" 
+                                        data-price="₡4.000">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Perfume de Dama Max Blush</h3>
+                            <p class="product-brand">IMITACION DEL MOD Blush BY ARIANA GRANDE</p>
+                            <p class="product-brand">LOVALI</p>
+                            <p class="product-price">₡4.000</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" style="background: var(--secondary-pink); border: none; margin-top: 0.5rem;" data-product-id="perfume-2" data-product-name="Perfume de Dama Max Blush" data-product-price="4000" data-product-image="personal/blush.jpg">
+                                <i class="bi bi-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Perfume Thank You Next -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="perfumes">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="400">
+                        <div class="product-image-container">
+                            <img src="personal/thank.jpg" alt="Perfume Thank You Next" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal" 
+                                        data-images='["personal/thank.jpg", "personal/thank1.jpg", "personal/thank2.jpg"]' 
+                                        data-title="Perfume Hello Next!" 
+                                        data-brand="IMITACION DEL Thank You Next! BY ARIANA GRANDE" 
+                                        data-price="₡3.500">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Perfume Hello Next!</h3>
+                            <p class="product-brand">IMITACION DEL Thank You Next! BY ARIANA GRANDE</p>
+                            <p class="product-brand">LOVALI</p>
+                            <p class="product-price">₡3.500</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" style="background: var(--secondary-pink); border: none; margin-top: 0.5rem;" data-product-id="perfume-3" data-product-name="Perfume Hello Next!" data-product-price="3500" data-product-image="personal/thank.jpg">
+                                <i class="bi bi-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Perfumes para flower -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="perfumes">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="200">
+                        <div class="product-image-container">
+                            <img src="personal/flower.jpg" alt="Perfumes para Dama" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal" 
+                                        data-images='["personal/flower.jpg", "personal/flower1.jpg" , "personal/flower2.jpg"]' 
+                                        data-title="Perfumes para Dama Crimson Flower"
+                                        data-brand="IMITACION FLOWER BY KENZO" 
+                                        data-brand="LOVALI" 
+                                        data-price="₡4.000">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Perfumes para Dama Crimson Flower</h3>
+                            <p>IMITACION FLOWER BY KENZO</p>
+                            <p>LOVALI</p>
+                            <p class="product-price">₡4.000</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" style="background: var(--secondary-pink); border: none; margin-top: 0.5rem;" data-product-id="perfume-4" data-product-name="Perfumes para Dama Crimson Flower" data-product-price="4000" data-product-image="personal/flower.jpg">
+                                <i class="bi bi-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+                 <!-- Perfume Bear -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="perfumes">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="300">
+                        <div class="product-image-container">
+                            <img src="personal/bear.jpg" alt="Perfume Dear Bear" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal" 
+                                        data-images='["personal/bear.jpg", "personal/bear1.jpg"]' 
+                                        data-title="Perfume de Dear Bear" 
+                                        data-brand="IMITACION DEL TOY 2 BUBBLE GUM BY MOSCHINO" 
+                                        data-price="₡3.800">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Perfume de Dear Bear</h3>
+                            <p class="product-brand">IMITACION DEL TOY 2 BUBBLE GUM BY MOSCHINO</p>
+                            <p class="product-brand">LOVALI</p>
+                            <p class="product-price">₡3.800</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" style="background: var(--secondary-pink); border: none; margin-top: 0.5rem;" data-product-id="perfume-5" data-product-name="Perfume de Dear Bear" data-product-price="3800" data-product-image="personal/bear.jpg">
+                                <i class="bi bi-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Perfume Billie --->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="perfumes">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="400">
+                        <div class="product-image-container">
+                            <img src="personal/billie.jpg" alt="Perfume Billie Eilish" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal" 
+                                        data-images='["personal/billie.jpg", "personal/billie1.jpg"]' 
+                                        data-title="Perfume Elite l Bella Elite" 
+                                        data-brand="IMITACION DEL EILISH BY BILLIE EILISH" 
+                                        data-price="₡3.500">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Perfume Elite l Bella Elite</h3>
+                            <p class="product-brand">IMITACION DEL EILISH BY BILLIE EILISH</p>
+                            <p class="product-brand">LOVALI</p>
+                            <p class="product-price">₡3.500</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" style="background: var(--secondary-pink); border: none; margin-top: 0.5rem;" data-product-id="perfume-6" data-product-name="Perfume Elite l Bella Elite" data-product-price="3500" data-product-image="personal/billie.jpg">
+                                <i class="bi bi-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Perfume Escape --->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="perfumes">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="400">
+                        <div class="product-image-container">
+                            <img src="personal/escape.jpg" alt="Perfume Natural Escape" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal" 
+                                        data-images='["personal/escape.jpg", "personal/escape1.jpg", "personal/escape2.jpg"]' 
+                                        data-title="Perfume Natural Escape" 
+                                        data-brand="IMITACION DEL BOMBSHELL ESCAPE BY VICTORIA'S SECRET" 
+                                        data-price="₡3.500">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Perfume Natural Escape</h3>
+                            <p class="product-brand">IMITACION DEL BOMBSHELL ESCAPE BY VICTORIA'S SECRET</p>
+                            <p class="product-brand">LOVALI</p>
+                            <p class="product-price">₡3.500</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" style="background: var(--secondary-pink); border: none; margin-top: 0.5rem;" data-product-id="perfume-7" data-product-name="Perfume Natural Escape" data-product-price="3500" data-product-image="personal/escape.jpg">
+                                <i class="bi bi-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Perfume Spring --->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="perfumes">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="400">
+                        <div class="product-image-container">
+                            <img src="personal/spring.jpg" alt="Perfume Spring Island" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal" 
+                                        data-images='["personal/spring.jpg", "personal/spring1.jpg", "personal/spring2.jpg"]' 
+                                        data-title="Perfume Spring Island" 
+                                        data-brand="IMITACION DEL BOMBSHELL ISLE BY VICTORIA'S SECRET" 
+                                        data-price="₡3.500">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Perfume Spring Island</h3>
+                            <p class="product-brand">IMITACION DEL BOMBSHELL ISLE BY VICTORIA'S SECRET</p>
+                            <p class="product-brand">LOVALI</p>
+                            <p class="product-price">₡3.500</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" style="background: var(--secondary-pink); border: none; margin-top: 0.5rem;" data-product-id="perfume-8" data-product-name="Perfume Spring Island" data-product-price="3500" data-product-image="personal/spring.jpg">
+                                <i class="bi bi-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Colonias para Hombre Gimini -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="colonias">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="500">
+                        <div class="product-image-container">
+                            <img src="personal/gimini.jpg" alt="Colonias para Hombre" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal" 
+                                        data-images='["personal/gimini.jpg", "personal/gimini1.jpg", "personal/gimini2.jpg"]' 
+                                        data-title="Colonia Gimini" 
+                                        data-brand="LOVALI" 
+                                        data-price="₡3.000">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Colonia para Hombre Gimini</h3>
+                            <p class="product-brand">IMITACION DEL PI BY GIVENCHY</p>
+                            <p class="product-brand">LOVALI</p>
+                            <p class="product-price">₡3.000</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" style="background: var(--secondary-pink); border: none; margin-top: 0.5rem;" data-product-id="colonia-1" data-product-name="Colonia para Hombre Gimini" data-product-price="3000" data-product-image="personal/gimini.jpg">
+                                <i class="bi bi-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Colonias para Hombre Imitación -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="colonias">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="600">
+                        <div class="product-image-container">
+                            <img src="personal/robot.jpg" alt="Colonias para Hombre Imitación" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal" 
+                                        data-images='["personal/robot.jpg", "personal/robot1.jpg"]' 
+                                        data-title="Colonia Robot Revolution" 
+                                        data-brand="IMITACION" 
+                                        data-price="₡4.500">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Colonia Robot Revolution</h3>
+                            <p class="product-brand">IMITACION DEL PHANTHOM BY PACO RABANNE</p>
+                            <p class="product-brand">LOVALI</p>
+                            <p class="product-price">₡4.500</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" style="background: var(--secondary-pink); border: none; margin-top: 0.5rem;" data-product-id="colonia-2" data-product-name="Colonia Robot Revolution" data-product-price="4500" data-product-image="personal/robot.jpg">
+                                <i class="bi bi-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                  <!-- Colonias para Hombre Imitación -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="colonias">
+                    <div class="product-card-modern" data-aos="fade-up" data-aos-delay="600">
+                        <div class="product-image-container">
+                            <img src="personal/jimmy.jpg" alt="Colonias para Hombre Imitación" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#productModal" 
+                                        data-images='["personal/jimmy.jpg", "personal/jimmy1.jpg"]' 
+                                        data-title="Colonia Jimmy Boy" 
+                                        data-brand="IMITACION" 
+                                        data-price="₡3.500">
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Colonia Jimmy Boy</h3>
+                            <p class="product-brand">IMITACION DEL TOMMY CLASSIC BY TOMMY HILFIGER</p>
+                            <p class="product-brand">LOVALI</p>
+                            <p class="product-price">₡3.500</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" style="background: var(--secondary-pink); border: none; margin-top: 0.5rem;" data-product-id="colonia-3" data-product-name="Colonia Jimmy Boy" data-product-price="3500" data-product-image="personal/jimmy.jpg">
+                                <i class="bi bi-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>               
+
+              
+
+            </div>
+        </div>
+    </main>
+
+        <!-- Modal de Producto - Mejorado con vista más grande -->
+    <div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content modal-content-modern">
+                <div class="modal-header modal-header-modern">
+                    <h5 class="modal-title text-white" id="modalProductTitle">Producto</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body modal-body-modern p-0">
+                    <div class="row g-0">
+                        <div class="col-lg-8">
+                            <div id="modalCarousel" class="carousel slide h-100" data-bs-ride="carousel">
+                                <div class="carousel-inner h-100" id="modalCarouselInner">
+                                    <!-- Images will be inserted here by JavaScript -->
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#modalCarousel" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Anterior</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#modalCarousel" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Siguiente</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="p-4 h-100 d-flex flex-column">
+                                <h4 id="modalProductName" class="text-dark mb-3"></h4>
+                                <p id="modalProductBrand" class="text-muted mb-2"></p>
+                                <h3 id="modalProductPrice" class="text-primary mb-4"></h3>
+                                <div class="mt-auto">
+                                    <a href="https://wa.me/50671073953" class="btn btn-primary w-100 mb-2" style="background: var(--secondary-pink); border: none;">
+                                        <i class="bi bi-whatsapp me-2"></i>Consultar por WhatsApp
+                                    </a>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- Botón Volver Arriba -->
+    <button id="backToTop" class="btn btn-primary rounded-circle" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; background: linear-gradient(135deg, var(--primary-pink), var(--secondary-pink)); border: none; display: none;">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+        <!-- Pie de Página Profesional -->
+    <footer class="footer-modern">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5 style="color: white; font-weight: 600;">Almas Store</h5>
+                    <p style="color: rgba(255,255,255,0.8);">Productos premium de belleza y cuidado personal seleccionados especialmente para ti.</p>
+                    <div class="mt-3">
+                        <a href="https://www.facebook.com/Almas.StoreCR/" target="_blank" class="text-decoration-none me-3" style="color: white;">
+                            <i class="bi bi-facebook fs-4"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@almas.store.cr" target="_blank" class="text-decoration-none me-3" style="color: white;">
+                            <i class="bi bi-tiktok fs-4"></i>
+                        </a>
+                        <a href="https://instagram.com/almas_storecr" target="_blank" class="text-decoration-none" style="color: white;">
+                            <i class="bi bi-instagram fs-4"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5 style="color: white; font-weight: 600;">Enlaces Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" style="color: rgba(255,255,255,0.8); text-decoration: none;">Inicio</a></li>
+                        <li><a href="#productos" style="color: rgba(255,255,255,0.8); text-decoration: none;">Productos</a></li>
+                        <li><a href="catalogoskincare.html" style="color: rgba(255,255,255,0.8); text-decoration: none;">Cuidado Facial</a></li>
+                        <li><a href="catalogomaquillaje.html" style="color: rgba(255,255,255,0.8); text-decoration: none;">Maquillaje</a></li>
+                        <li><a href="catalogopersonal.html" style="color: rgba(255,255,255,0.8); text-decoration: none;">Cuidado Personal</a></li>
+                        <li><a href="catalogocabello.html" style="color: rgba(255,255,255,0.8); text-decoration: none;">Cuidado del Cabello</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5 style="color: white; font-weight: 600;">Contacto</h5>
+                    <p style="color: rgba(255,255,255,0.8); margin: 0;">
+                        <i class="bi bi-whatsapp me-2"></i>
+                        <a href="https://wa.me/50671073953" style="color: rgba(255,255,255,0.8); text-decoration: none;">+506 7107-3953</a>
+                    </p>
+                    <p style="color: rgba(255,255,255,0.8); margin: 0;">
+                        <i class="bi bi-envelope me-2"></i>
+                        <a href="mailto:almasstorecr@gmail.com" style="color: rgba(255,255,255,0.8); text-decoration: none;">almasstorecr@gmail.com</a>
+                    </p>
+                    <p style="color: rgba(255,255,255,0.8); margin: 0;">
+                        <i class="bi bi-geo-alt me-2"></i>
+                        San Roque de Barva, Heredia
+                    </p>
+                </div>
+            </div>
+            <hr style="border-color: rgba(255,255,255,0.3);">
+            <div class="text-center">
+                <p class="mb-0" style="color: rgba(255,255,255,0.8);">&copy; 2025 Almas Store. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="cart.js"></script>
+    
+    <script>
+        // Inicializar AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Funcionalidad de filtros
+        document.addEventListener('DOMContentLoaded', function() {
+            const botonesFiltro = document.querySelectorAll('.filter-btn');
+            const itemsProducto = document.querySelectorAll('.product-item');
+            const entradaBusqueda = document.getElementById('searchInput');
+
+            // Filtrar por categoría
+            botonesFiltro.forEach(boton => {
+                boton.addEventListener('click', function() {
+                    const filtro = this.getAttribute('data-filter');
+                    
+                    // Actualizar botón activo
+                    botonesFiltro.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+
+                    // Filtrar productos
+                    itemsProducto.forEach(item => {
+                        const categoria = item.getAttribute('data-category');
+                        
+                        if (filtro === 'all' || filtro === categoria) {
+                            item.style.display = 'block';
+                            setTimeout(() => {
+                                item.style.opacity = '1';
+                                item.style.transform = 'translateY(0)';
+                            }, 50);
+                        } else {
+                            item.style.opacity = '0';
+                            item.style.transform = 'translateY(20px)';
+                            setTimeout(() => {
+                                item.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+
+            // Funcionalidad de búsqueda
+            entradaBusqueda.addEventListener('input', function() {
+                const terminoBusqueda = this.value.toLowerCase();
+                
+                itemsProducto.forEach(item => {
+                    const titulo = item.querySelector('.product-title').textContent.toLowerCase();
+                    const marca = item.querySelector('.product-brand').textContent.toLowerCase();
+                    
+                    if (titulo.includes(terminoBusqueda) || marca.includes(terminoBusqueda)) {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0)';
+                        }, 50);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+
+            // Funcionalidad del modal
+            const modalProducto = document.getElementById('productModal');
+            modalProducto.addEventListener('show.bs.modal', function(event) {
+                const boton = event.relatedTarget;
+                const imagenes = JSON.parse(boton.getAttribute('data-images'));
+                const titulo = boton.getAttribute('data-title');
+                const marca = boton.getAttribute('data-brand');
+                const precio = boton.getAttribute('data-price');
+
+                // Actualizar contenido del modal
+                document.getElementById('modalProductTitle').textContent = titulo;
+                document.getElementById('modalProductName').textContent = titulo;
+                document.getElementById('modalProductBrand').textContent = marca;
+                document.getElementById('modalProductPrice').textContent = precio;
+
+                // Actualizar carrusel
+                const carruselInterno = document.getElementById('modalCarouselInner');
+                carruselInterno.innerHTML = '';
+
+                imagenes.forEach((imagen, indice) => {
+                    const itemCarrusel = document.createElement('div');
+                    itemCarrusel.className = `carousel-item ${indice === 0 ? 'active' : ''}`;
+                    itemCarrusel.innerHTML = `
+                        <img src="${imagen}" class="d-block w-100 modal-product-image" alt="${titulo}">
+                    `;
+                    carruselInterno.appendChild(itemCarrusel);
+                });
+            });
+
+            // Animaciones de scroll
+            const opcionesObservador = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observador = new IntersectionObserver((entradas) => {
+                entradas.forEach(entrada => {
+                    if (entrada.isIntersecting) {
+                        entrada.target.classList.add('visible');
+                    }
+                });
+            }, opcionesObservador);
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observador.observe(el);
+            });
+
+            // Botón Volver Arriba
+            const botonVolverArriba = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    botonVolverArriba.style.display = 'block';
+                } else {
+                    botonVolverArriba.style.display = 'none';
+                }
+            });
+            
+            botonVolverArriba.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Desplazamiento suave para enlaces de anclaje
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const objetivo = document.querySelector(this.getAttribute('href'));
+                    if (objetivo) {
+                        objetivo.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

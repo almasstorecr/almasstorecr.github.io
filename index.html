@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Configuración básica del documento -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Almas Store - Skincare & Beauty</title>
+    <title>almasstorecr.github.io</title>
+    
+    <!-- Fuentes de Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Framework Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Iconos de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <!-- Animaciones AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="imgs/nosotros.jpg" type="image/jpg">
+</head>
+<body>
+    <!-- Barra de navegación principal -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#home">
+                <img src="imgs/logo.jpg" alt="Logo" class="logo me-2">
+                <span class="brand-text"> Almas Store </span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#hero">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#catalogo">Catálogo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#informacion">Pago</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#envios">Envío</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección Hero - Banner principal de bienvenida -->
+    <section id="hero" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6">
+                    <h1 class="hero-title">Bienvenid@s a Almas Store</h1>
+                    <p class="hero-subtitle">Descubre el mundo del skincare y belleza con productos premium seleccionados especialmente para ti</p>
+                    <div class="hero-buttons">
+                        <a href="#productos" class="btn btn-primary me-3">Ver Productos</a>
+                        <a href="#catalogo" class="btn btn-outline-primary">Ver Catálogo</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="imgs/fondo.png" alt="Hero Image" class="img-fluid hero-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Sobre Nosotros - Información de la empresa -->
+    <section id="sobre" class="about-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <img src="imgs/nosotros.jpg" alt="About Us" class="img-fluid rounded-4 shadow">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="section-title">Sobre Nosotros</h2>
+                    <p class="section-text">Almas Store es una tienda que vende productos de skincare y belleza, ofreciendo una selección cuidada de marcas reconocidas para el cuidado personal.</p>
+                    <p class="section-text">Nuestro compromiso es brindar soluciones efectivas y seguras para que te sientas y luzcas mejor cada día.</p>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span>Productos auténticos y certificados</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span>Asesoramiento personalizado</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span>Envíos a todo Costa Rica</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Productos - Galería de categorías de productos -->
+    <section id="productos" class="products-section py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Nuestros Productos</h2>
+            <div class="row flex-nowrap overflow-auto">
+                <div class="col-md-3 col-sm-6 mb-4 flex-shrink-0">
+                    <div class="product-card">
+                        <img src="imgs/maquillaje.jpg" alt="Maquillaje" class="card-img">
+                        <div class="card-overlay">
+                            <h4>Maquillaje</h4>
+                            <p>Base, correctores, labiales y más</p>
+                            <div class="d-flex gap-2">
+                                <a href="catalogomaquillaje.html" class="btn btn-sm btn-light">Ver más</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 mb-4 flex-shrink-0">
+                    <div class="product-card">
+                        <img src="imgs/skincare.jpg" alt="Skincare" class="card-img">
+                        <div class="card-overlay">
+                            <h4>Cuidado Facial</h4>
+                            <p>Cremas, serums, limpiadores</p>
+                            <a href="catalogoskincare.html" class="btn btn-sm btn-light">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 mb-4 flex-shrink-0">
+                    <div class="product-card">
+                        <img src="imgs/perfumeria.jpg" alt="Perfumería" class="card-img">
+                        <div class="card-overlay">
+                            <h4>Cuidado Corporal</h4>
+                            <p>Perfumes, lociones, tratamientos</p>
+                            <a href="catalogopersonal.html" class="btn btn-sm btn-light">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 mb-4 flex-shrink-0">
+                    <div class="product-card">
+                        <img src="cabello/shampoo.jpg" alt="Cabello" class="card-img">
+                        <div class="card-overlay">
+                            <h4>Cuidado del Cabello</h4>
+                            <p>Shampoos, acondicionadores, tratamientos</p>
+                            <a href="catalogocabello.html" class="btn btn-sm btn-light">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Catálogo - Enlace al catálogo digital completo -->
+    <section id="catalogo" class="catalog-section py-5">
+        <div class="container text-center">
+            <h2 class="section-title mb-4">Catálogo Completo</h2>
+            <p class="section-text mb-4">Explora todos nuestros productos en nuestro catálogo digital</p>
+            <a href="https://www.canva.com/design/DAGSuxZ829w/ub4SYbuAgnmqycBNdTXKPA/view?utm_content=DAGSuxZ829w&utm_campaign=designshare&utm_medium=link&utm_source=editor" 
+               target="_blank" class="btn btn-primary btn-lg">
+                <i class="bi bi-eye me-2"></i>Ver Catálogo
+            </a>
+        </div>
+    </section>
+
+    <!-- Sección Información - Métodos de pago disponibles -->
+    <section id="informacion" class="info-section py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Métodos de Pago</h2>
+                <p class="section-subtitle">Opciones seguras y convenientes para tu compra</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="info-card-modern">
+                        <div class="info-card-inner">
+                            <div class="info-icon-wrapper">
+                                <div class="info-icon-circle">
+                                    <i class="bi bi-cash"></i>
+                                </div>
+                                <div class="icon-bg-pattern"></div>
+                            </div>
+                            <div class="info-content">
+                                <h4 class="info-title">Efectivo</h4>
+                                <p class="info-description">Aceptamos pagos en efectivo para tus compras presenciales. Seguro y sin complicaciones.</p>
+                                <div class="info-features">
+                                  
+                                </div>
+                            </div>
+                            <div class="info-hover-effect"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="info-card-modern">
+                        <div class="info-card-inner">
+                            <div class="info-icon-wrapper">
+                                <div class="info-icon-circle">
+                                    <i class="bi bi-phone"></i>
+                                </div>
+                                <div class="icon-bg-pattern"></div>
+                            </div>
+                            <div class="info-content">
+                                <h4 class="info-title">SINPE Móvil</h4>
+                                <p class="info-description">Paga fácilmente desde tu celular con SINPE Móvil. Rápido y disponible 24/7.</p>
+                                <div class="info-features">
+                                    
+                                </div>
+                            </div>
+                            <div class="info-hover-effect"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="info-card-modern">
+                        <div class="info-card-inner">
+                            <div class="info-icon-wrapper">
+                                <div class="info-icon-circle">
+                                    <i class="bi bi-paypal"></i>
+                                </div>
+                                <div class="icon-bg-pattern"></div>
+                            </div>
+                            <div class="info-content">
+                                <h4 class="info-title">Transferencia Bancaria</h4>
+                                <p class="info-description">Realiza transferencias bancarias directamente a nuestra cuenta. Ideal para montos mayores.</p>
+                                <div class="info-features">
+                                    
+                                </div>
+                            </div>
+                            <div class="info-hover-effect"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Información Adicional - Contacto para dudas de pago -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="additional-info-card">
+                        <div class="row align-items-center">
+                            <div class="col-lg-8">
+                                <h4 class="additional-title">¿Tienes dudas sobre el pago?</h4>
+                                <p class="additional-text">Contáctanos y te asesoramos sobre el método de pago que mejor se adapte a tus necesidades.</p>
+                            </div>
+                            <div class="col-lg-4 text-lg-end">
+                                <a href="#contacto" class="btn btn-primary btn-lg">
+                                    <i class="bi bi-whatsapp me-2"></i>Contactar
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Envíos - Métodos de envío disponibles -->
+    <section id="envios" class="shipping-section py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Métodos de Envío</h2>
+                <p class="section-subtitle">Opciones convenientes para recibir tus productos</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="info-card-modern">
+                        <div class="info-card-inner">
+                            <div class="info-icon-wrapper">
+                                <div class="info-icon-circle">
+                                    <i class="bi bi-truck"></i>
+                                </div>
+                                <div class="icon-bg-pattern"></div>
+                            </div>
+                            <div class="info-content">
+                                <h4 class="info-title">Uber Flash</h4>
+                                <p class="info-description">Entrega rápida y segura a través de Uber Flash. Se coordina la hora con el cliente. Pago únicamente por SINPE o transferencia antes de la entrega.</p>
+                                <div class="info-features">
+                                    <span class="feature-tag">Pago Anticipado</span>
+                                </div>
+                            </div>
+                            <div class="info-hover-effect"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="info-card-modern">
+                        <div class="info-card-inner">
+                            <div class="info-icon-wrapper">
+                                <div class="info-icon-circle">
+                                    <i class="bi bi-envelope"></i>
+                                </div>
+                                <div class="icon-bg-pattern"></div>
+                            </div>
+                            <div class="info-content">
+                                <h4 class="info-title">Correos</h4>
+                                <p class="info-description">Servicio postal nacional para entregas a todo Costa Rica. Seguimiento disponible. Pago únicamente por SINPE o transferencia antes de la entrega.</p>
+                                <div class="info-features">
+                                    <span class="feature-tag">Pago Anticipado</span>
+                                </div>
+                            </div>
+                            <div class="info-hover-effect"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="info-card-modern">
+                        <div class="info-card-inner">
+                            <div class="info-icon-wrapper">
+                                <div class="info-icon-circle">
+                                    <i class="bi bi-geo-alt"></i>
+                                </div>
+                                <div class="icon-bg-pattern"></div>
+                            </div>
+                            <div class="info-content">
+                                <h4 class="info-title">Entrega Personal en Heredia</h4>
+                                <p class="info-description">Servicio de entrega personal en la zona de Heredia. Entregas entre semana después de las 6pm, fines de semana se coordina la hora con el cliente. Pago en efectivo, SINPE o transferencia.</p>
+                                <div class="info-features">
+                                    <span class="feature-tag">Pago Flexible</span>
+                                </div>
+                            </div>
+                            <div class="info-hover-effect"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="info-card-modern">
+                        <div class="info-card-inner">
+                            <div class="info-icon-wrapper">
+                                <div class="info-icon-circle">
+                                    <i class="bi bi-shop"></i>
+                                </div>
+                                <div class="icon-bg-pattern"></div>
+                            </div>
+                            <div class="info-content">
+                                <h4 class="info-title">Retiro en Tienda</h4>
+                                <p class="info-description">Recoge tus productos directamente en nuestra tienda. Sin costo adicional. Pago en efectivo, SINPE o transferencia.</p>
+                                <div class="info-features">
+                                    <span class="feature-tag">Pago Flexible</span>
+                                </div>
+                            </div>
+                            <div class="info-hover-effect"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Información Adicional - Contacto para envíos -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="additional-info-card">
+                        <div class="row align-items-center">
+                            <div class="col-lg-8">
+                                <h4 class="additional-title">¿Necesitas información sobre envíos?</h4>
+                                <p class="additional-text">Contáctanos para más detalles sobre costos, tiempos de entrega y cobertura de cada método de envío.</p>
+                            </div>
+                            <div class="col-lg-4 text-lg-end">
+                                <a href="#contacto" class="btn btn-primary btn-lg">
+                                    <i class="bi bi-whatsapp me-2"></i>Consultar Envíos
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Contacto - Información de contacto y redes sociales -->
+    <section id="contacto" class="contact-section py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Contacto</h2>
+                <p class="section-subtitle">Estamos aquí para ayudarte con todas tus dudas</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="contact-card-modern">
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="contact-item-modern">
+                                    <div class="contact-icon-modern">
+                                        <i class="bi bi-whatsapp"></i>
+                                    </div>
+                                    <div class="contact-content-modern">
+                                        <h5>WhatsApp</h5>
+                                        <a href="https://wa.me/50671073953" target="_blank">+506 7107-3953</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="contact-item-modern">
+                                    <div class="contact-icon-modern">
+                                        <i class="bi bi-envelope"></i>
+                                    </div>
+                                    <div class="contact-content-modern">
+                                        <h5>Correo Electrónico</h5>
+                                        <span>almasstorecr@gmail.com</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="contact-item-modern">
+                                    <div class="contact-icon-modern">
+                                        <i class="bi bi-clock"></i>
+                                    </div>
+                                    <div class="contact-content-modern">
+                                        <h5>Horario de Atención</h5>
+                                        <span>Lunes a Sábado: 10:00 AM - 6:00 PM</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="contact-item-modern">
+                                    <div class="contact-icon-modern">
+                                        <i class="bi bi-geo-alt"></i>
+                                    </div>
+                                    <div class="contact-content-modern">
+                                        <h5>Ubicación</h5>
+                                        <span>San Roque de Barva, Heredia, Costa Rica</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col-12">
+                                <div class="social-section-modern text-center">
+                                    <h5 class="mb-3">Síguenos en redes</h5>
+                                    <div class="social-links-modern">
+                                        <a href="https://www.facebook.com/Almas.StoreCR/" target="_blank" class="social-link-modern">
+                                            <i class="bi bi-facebook"></i>
+                                            <span>Facebook</span>
+                                        </a>
+                                        <a href="https://www.tiktok.com/@almas.store.cr" target="_blank" class="social-link-modern">
+                                            <i class="bi bi-tiktok"></i>
+                                            <span>TikTok</span>
+                                        </a>
+                                        <a href="https://instagram.com/almas_storecr" target="_blank" class="social-link-modern">
+                                            <i class="bi bi-instagram"></i>
+                                            <span>Instagram</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col-12 text-center">
+                                <div class="map-container-modern">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.1234567890123!2d-84.1234567890123!3d10.1234567890123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e123456789ab%3A0x123456789abcdef!2sSan%20Roque%20de%20Barva%2C%20Heredia%2C%20Costa%20Rica!5e0!3m2!1ses!2sus!4v1234567890123" 
+                                        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+                                    </iframe>
+                                </div>
+                                <a href="https://goo.gl/maps/7v6Xq6v7XqvQ7Xqv7" target="_blank" class="btn btn-outline-primary mt-3">
+                                    <i class="bi bi-map me-2"></i>Ver en Google Maps
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Elegante y Moderno -->
+    <footer class="footer-professional">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Logo y Marca -->
+                <div class="col-lg-4 col-md-6 mb-3">
+                    <div class="footer-brand">
+                        <img src="imgs/logo.jpg" alt="Almas Store" class="footer-logo">
+                        <div class="brand-info">
+                            <h4 class="brand-name">Almas Store</h4>
+                            <p class="brand-tagline">Skincare & Beauty</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enlaces Rápidos -->
+                <div class="col-lg-4 col-md-6 mb-3">
+                    <div class="footer-links">
+                        <h5 class="footer-title">Enlaces</h5>
+                        <div class="footer-nav-links">
+                            <a href="#hero">Inicio</a>
+                            <a href="#productos">Productos</a>
+                            <a href="#catalogo">Catálogo</a>
+                            <a href="#contacto">Contacto</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contacto y Redes -->
+                <div class="col-lg-4 col-md-12 mb-3">
+                    <div class="footer-contact">
+                        <h5 class="footer-title">Contáctanos</h5>
+                        <div class="contact-info">
+                            <a href="https://wa.me/50671073953" class="contact-link">
+                                <i class="bi bi-whatsapp"></i> +506 7107-3953
+                            </a>
+                            <a href="mailto:almasstorecr@gmail.com" class="contact-link">
+                                <i class="bi bi-envelope"></i> almasstorecr@gmail.com
+                            </a>
+                        </div>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/Almas.StoreCR/" target="_blank" class="social-link">
+                                <i class="bi bi-facebook"></i>
+                            </a>
+                            <a href="https://www.tiktok.com/@almas.store.cr" target="_blank" class="social-link">
+                                <i class="bi bi-tiktok"></i>
+                            </a>
+                            <a href="https://instagram.com/almas_storecr" target="_blank" class="social-link">
+                                <i class="bi bi-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Línea divisoria -->
+            <hr class="footer-divider">
+
+            <!-- Copyright -->
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2025 Almas Store. Todos los derechos reservados.</p>
+                </div>
+                <div class="footer-bottom-links">
+                    <a href="#">Política de Privacidad</a>
+                    <a href="#">Términos de Servicio</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Back to Top Button -->
+        <button id="backToTop" class="back-to-top-btn" title="Volver arriba">
+            <i class="bi bi-arrow-up-circle"></i>
+        </button>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Cart JS -->
+    <script src="cart.js"></script>
+
+    <!-- Custom JS -->
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Hide navbar on scroll down, show on scroll up
+        let lastScrollTop = 0;
+        const navbar = document.querySelector('.navbar');
+
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                // Scroll down - hide navbar
+                navbar.classList.add('navbar-hidden');
+            } else {
+                // Scroll up - show navbar
+                navbar.classList.remove('navbar-hidden');
+            }
+
+            lastScrollTop = scrollTop;
+        });
+    </script>
+</body>
+</html>
